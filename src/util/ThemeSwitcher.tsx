@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Switch } from "@headlessui/react";
-import { MdDarkMode } from "react-icons/md";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { useLocalStorage } from "usehooks-ts";
 
 function classNames(...classes: string[]) {
@@ -32,7 +32,7 @@ function ThemeSwitch() {
       )}
     >
       <span className="sr-only">
-        <MdDarkMode />
+        {enabled ? <MdDarkMode size={20}/> : <MdLightMode size={20}/>}
       </span>
     </Switch>
   );

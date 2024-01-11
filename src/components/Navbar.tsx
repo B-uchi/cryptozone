@@ -1,5 +1,6 @@
 import ThemeSwitch from "../util/ThemeSwitcher";
 import MenuItem from "./MenuItem";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -7,11 +8,12 @@ const Navbar = () => {
       <div className="container mx-auto p-3 flex justify-between">
         <h1 className="text-2xl font-bold dark:text-white">Cryptozone</h1>
         <div className="text-black dark:text-white flex items-center gap-6">
-          <MenuItem text="Home" />
+          <Link to={'/'}>
+            <MenuItem text="Home" />
+          </Link>
           <MenuItem text="Exchanges" />
           <MenuItem text="News" />
           <ThemeSwitch />
-          
         </div>
       </div>
     </nav>
