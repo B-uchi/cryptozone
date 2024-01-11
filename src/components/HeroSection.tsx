@@ -1,6 +1,6 @@
 import millify from "millify";
 
-type HeroSectionProps = {
+export type HeroSectionProps = {
   coin: {
     name: string;
     price: number;

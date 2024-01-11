@@ -5,7 +5,7 @@ import HomePage from "./pages/HomePage";
 function App() {
   return (
     <Router>
-      <div className="bg-[#fafafa]  dark:bg-[#000000] w-full">
+      <div className=" h-fit w-full">
         <Navbar />
           <Routes>
             <Route path="/" element={<HomePage />} />
