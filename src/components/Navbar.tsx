@@ -8,12 +8,14 @@ const Navbar = () => {
       <div className="container mx-auto p-3 flex justify-between">
         <h1 className="text-2xl font-bold dark:text-white">Cryptozone</h1>
         <div className="text-black dark:text-white flex items-center gap-6">
-          <Link to={'/'}>
+          <Link to={"/"}>
             <MenuItem text="Home" />
           </Link>
           <MenuItem text="Exchanges" />
           <MenuItem text="News" />
-          <ThemeSwitch />
+          <div className="flex items-center cursor-pointer hover:bg-[#c0c0c0] dark:hover:bg-[#242424] p-1.5 rounded-lg">
+            <ThemeSwitch />
+          </div>
         </div>
       </div>
     </nav>
