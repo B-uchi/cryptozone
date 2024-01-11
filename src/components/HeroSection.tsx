@@ -14,8 +14,8 @@ type HeroSectionProps = {
 const HeroSection = (props: HeroSectionProps) => {
   const { coin } = props;
   return (
-    <div className="text-black dark:text-white flex w-full h-[60%] p-2">
-      <div className="w-1/2 flex flex-col justify-center items-center">
+    <div className="text-black dark:text-white flex flex-col-reverse md:flex-row w-full md:h-[60%]">
+      <div className="md:w-1/2 flex flex-col justify-center items-center">
         <p>World's most popular cryptocurrency</p>
         <p className="font-extrabold">Rank: {coin.rank}</p>
         <p className="font-extrabold mt-5 text-6xl flex justify-center items-center gap-3">
@@ -30,8 +30,8 @@ const HeroSection = (props: HeroSectionProps) => {
             </button>
         </div>
       </div>
-      <div className="w-1/2 flex justify-center items-center">
-        <img src={coin.iconUrl} className="w-[15rem]" alt="" />
+      <div className="md:w-1/2 flex justify-center items-center">
+        <img src={coin.iconUrl} className="md:w-[15rem] w-40 mb-3 md:mb-0" alt="" />
       </div>
     </div>
   );

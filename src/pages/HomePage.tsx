@@ -1,10 +1,12 @@
+import CryptoStats from "../components/CryptoStats";
 import HeroSection from "../components/HeroSection";
 import { useGetCryptocurrenciesQuery } from "../services/cryptocurrencyAPI";
 
 const HomePage = () => {
   const { data, error, isLoading } = useGetCryptocurrenciesQuery({});
   const firstCoin = data?.data?.coins[0];
-  console.log(firstCoin)
+  const stats = data?.data?.stats;
+  console.log(stats)
   return (
     <div className="h-[100vh] flex relative w-full">
       {isLoading ? (
@@ -15,8 +17,9 @@ const HomePage = () => {
           <div className="newtons-cradle__dot"></div>
         </div>
       ) : (
-        <div className="w-full">
+        <div className="w-full p-2">
           <HeroSection coin={firstCoin} />
+          <CryptoStats stats={stats}/>
         </div>
       )}
     </div>
