@@ -1,0 +1,40 @@
+import millify from "millify";
+
+type HeroSectionProps = {
+  coin: {
+    name: string;
+    price: number;
+    iconUrl: string;
+    marketCap: number;
+    rank: number;
+    symbol: string;
+  };
+};
+
+const HeroSection = (props: HeroSectionProps) => {
+  const { coin } = props;
+  return (
+    <div className="text-black dark:text-white flex w-full h-[60%] p-2">
+      <div className="w-1/2 flex flex-col justify-center items-center">
+        <p>World's most popular cryptocurrency</p>
+        <p className="font-extrabold">Rank: {coin.rank}</p>
+        <p className="font-extrabold mt-5 text-6xl flex justify-center items-center gap-3">
+          {coin.name}
+          <span className="text-xl">({coin.symbol})</span>
+        </p>
+        <p className="mt-5 text-2xl font-extrabold">Price: ${millify(coin.price)}</p>
+        <p className="mt-5 text-2xl font-extrabold">Market Cap: ${millify(coin.marketCap)}</p>
+        <div className="">
+            <button type="button" className="mt-10 p-2 px-3 bg-black text-white dark:bg-white dark:text-black rounded-md">
+               Read More
+            </button>
+        </div>
+      </div>
+      <div className="w-1/2 flex justify-center items-center">
+        <img src={coin.iconUrl} className="w-[15rem]" alt="" />
+      </div>
+    </div>
+  );
+};
+
+export default HeroSection;
