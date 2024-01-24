@@ -32,7 +32,7 @@ const CryptoStats = (props: CryptoStatsProps) => {
         {params.slice(0, 3).map((param, index) => (
           <div
             key={index}
-            className="flex flex-col-reverse md:w-1/3 h-[150px] justify-center items-center gap-2 p-2 bg-white dark:bg-black rounded-md border-[1px] border-[#efefef] dark:border-[#171717]"
+            className="flex flex-col-reverse md:w-1/3 h-[150px] justify-center items-center gap-2 p-2 bg-white dark:bg-black rounded-md border-[1px] border-[#efefef] dark:border-[#171717] cursor-pointer"
           >
             <p className="font-bold text-2xl">{millify(param)}</p>
             <p className="text-sm">
@@ -53,7 +53,7 @@ const CryptoStats = (props: CryptoStatsProps) => {
         {params.slice(3, 5).map((param, index) => (
           <div
             key={index}
-            className="flex flex-col-reverse md:w-1/2 justify-center h-[150px]  items-center gap-2 p-2 bg-white dark:bg-black rounded-md border-[1px] border-[#efefef] dark:border-[#171717]"
+            className="flex flex-col-reverse md:w-1/2 justify-center h-[150px]  items-center gap-2 p-2 bg-white dark:bg-black rounded-md border-[1px] border-[#efefef] dark:border-[#171717] cursor-pointer"
           >
             <p className="font-bold text-2xl">{millify(param)}</p>
             <p className="text-sm">{index === 0 ? "24h Volume" : "Markets"}</p>

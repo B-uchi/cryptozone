@@ -17,6 +17,19 @@ body{
 .dark{
   background-color: #000000;
 }
+thead tr th{
+  padding: 10px 5px;
+}
+.coin-list tr td{
+  padding: 20px 20px;
+}
+tbody tr:nth-child(odd){
+  background-color: #f5f5f5;
+}
+.dark tbody tr:nth-child(odd){
+  background-color: #0a0a0a;
+}
+
 /* loader from https://uiverse.io/G4b413l/jolly-kangaroo-36 */
 .newtons-cradle {
   --uib-size: 50px;

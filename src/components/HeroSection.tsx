@@ -5,9 +5,11 @@ export type HeroSectionProps = {
     name: string;
     price: number;
     iconUrl: string;
-    marketCap: number;
+    marketCap: string;
     rank: number;
     symbol: string;
+    change: number;
+    '24hVolume': number;
   };
 };
 
@@ -23,7 +25,7 @@ const HeroSection = (props: HeroSectionProps) => {
           <span className="text-xl">({coin.symbol})</span>
         </p>
         <p className="mt-5 text-2xl font-extrabold">Price: ${millify(coin.price)}</p>
-        <p className="mt-5 text-2xl font-extrabold">Market Cap: ${millify(coin.marketCap)}</p>
+        <p className="mt-5 text-2xl font-extrabold">Market Cap: ${millify(Number(coin.marketCap))}</p>
         <div className="">
             <button type="button" className="mt-10 p-2 px-3 bg-black text-white dark:bg-white dark:text-black rounded-md">
                Read More
