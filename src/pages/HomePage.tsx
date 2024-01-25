@@ -6,7 +6,7 @@ import { useGetCryptocurrenciesQuery } from "../services/cryptocurrencyAPI";
 const HomePage = () => {
   const { data, error, isLoading } = useGetCryptocurrenciesQuery({});
   const firstCoin = data?.data?.coins[0];
-  const first10Coins = data?.data?.coins.slice(0, 10);
+  const first10Coins = data?.data?.coins.slice(0, 12);
   const stats = data?.data?.stats;
   console.log(first10Coins)
   return (

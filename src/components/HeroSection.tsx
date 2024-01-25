@@ -5,7 +5,7 @@ export type HeroSectionProps = {
     name: string;
     price: number;
     iconUrl: string;
-    marketCap: string;
+    marketCap: number;
     rank: number;
     symbol: string;
     change: number;

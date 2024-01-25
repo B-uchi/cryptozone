@@ -28,7 +28,7 @@ const CryptoStats = (props: CryptoStatsProps) => {
   return (
     <div className="text-black mt-10 md:mt-3 flex-col dark:text-white flex w-full justify-center items-center mb-10">
       <h1 className="text-3xl mb-3 font-bold">Crypto Stats</h1>
-      <div className="flex flex-col md:flex-row gap-3  w-full">
+      <div className="flex flex-col md:flex-row gap-3  w-[90%]">
         {params.slice(0, 3).map((param, index) => (
           <div
             key={index}
@@ -49,7 +49,7 @@ const CryptoStats = (props: CryptoStatsProps) => {
           </div>
         ))}
       </div>
-      <div className="flex flex-col md:flex-row gap-3 w-full mt-3">
+      <div className="flex flex-col md:flex-row gap-3 w-[90%] mt-3">
         {params.slice(3, 5).map((param, index) => (
           <div
             key={index}
