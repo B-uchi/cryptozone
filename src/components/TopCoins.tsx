@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CoinGrid from "./CoinGrid";
 import { HeroSectionProps } from "./HeroSection";
 import { FaArrowRight } from "react-icons/fa";
@@ -13,9 +14,11 @@ const TopCoins = (props: TopCoinsProps) => {
       <div className="w-[90%] flex flex-col mb-2">
         <CoinGrid coins={coins} />
         <div className="dark:text-white text-black mt-3 p-1 flex justify-center">
-          <button type="button" className="underline flex items-center gap-2">
-            See all <FaArrowRight />
-          </button>
+          <Link to={"/coins"}>
+            <button type="button" className="underline flex items-center gap-2">
+              See all <FaArrowRight />
+            </button>
+          </Link>
         </div>
       </div>
     </div>

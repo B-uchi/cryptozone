@@ -10,7 +10,7 @@ const CoinGrid = (props: TopCoinsProps) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mt-2">
       {coins.map((coin) => (
-        <CoinItem coin={coin} />
+        <CoinItem coin={coin} key={coin.name}/>
       ))}
     </div>
   );
