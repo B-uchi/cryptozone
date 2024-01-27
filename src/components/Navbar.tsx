@@ -8,7 +8,7 @@ import { MdClose } from "react-icons/md";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <nav className="bg-white relative z-50 top-0 w-full dark:bg-[#0a0a0a] flex p-1 dark:text-white border-b-[1px] border-[#efefef] dark:border-[#171717]">
+    <nav className="bg-white sticky z-50 top-0 w-full dark:bg-[#0a0a0a] flex p-1 dark:text-white border-b-[1px] border-[#efefef] dark:border-[#171717]">
       <div className="container mx-auto p-3 flex justify-between items-center">
         <h1 className="text-2xl font-bold ">CryptOzone</h1>
         <div className="text-black hidden md:flex dark:text-white  items-center gap-6">

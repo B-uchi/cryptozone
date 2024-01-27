@@ -9,9 +9,9 @@ const HomePage = () => {
   const first10Coins = data?.data?.coins.slice(0, 12);
   const stats = data?.data?.stats;
   return (
-    <div className="md:h-[100vh] flex relative w-full">
+    <div className="md:max-h-fit mt-0 flex relative w-full">
       {isLoading ? (
-        <div className="newtons-cradle absolute left-[50%] top-[50%]">
+        <div className="newtons-cradle absolute left-[50%] top-[50vh]">
           <div className="newtons-cradle__dot"></div>
           <div className="newtons-cradle__dot"></div>
           <div className="newtons-cradle__dot"></div>

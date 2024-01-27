@@ -16,7 +16,7 @@ export type HeroSectionProps = {
 const HeroSection = (props: HeroSectionProps) => {
   const { coin } = props;
   return (
-    <div className="text-black dark:text-white flex flex-col-reverse md:flex-row w-full md:h-[60%]">
+    <div className="text-black dark:text-white flex flex-col-reverse md:flex-row w-full mt-20">
       <div className="md:w-1/2 flex flex-col justify-center items-center">
         <p>World's most popular cryptocurrency</p>
         <p className="font-extrabold">Rank: {coin.rank}</p>

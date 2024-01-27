@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import CoinGrid from "../components/CoinGrid";
 import { useGetCryptocurrenciesQuery } from "../services/cryptocurrencyAPI";
 import { IoMdSearch } from "react-icons/io";
+import { MdCancel } from "react-icons/md";
 import { HeroSectionProps } from "../components/HeroSection";
 
 const Cryptocurrencies = () => {
@@ -21,16 +22,16 @@ const Cryptocurrencies = () => {
   }, [isLoading]);
 
   const searchCoins = (search: string) => {
-    const filtered = data?.data?.coins.filter((coin: CoinType['coin']) => {
+    const filtered = data?.data?.coins.filter((coin: CoinType["coin"]) => {
       return coin.name.toLowerCase().includes(search.toLowerCase());
     });
     setFilteredCoins(filtered);
   };
 
   return (
-    <div className="md:h-[100vh] flex justify-center  w-full text-black dark:text-white">
+    <div className="md:max-h-fit flex justify-center relative w-full text-black dark:text-white">
       {isLoading ? (
-        <div className="newtons-cradle absolute left-[50%] top-[50%]">
+        <div className="newtons-cradle absolute top-[50vh]">
           <div className="newtons-cradle__dot"></div>
           <div className="newtons-cradle__dot"></div>
           <div className="newtons-cradle__dot"></div>
@@ -54,7 +55,7 @@ const Cryptocurrencies = () => {
                 </button>
               </div>
             ) : (
-              <div className="border-[1px] search-box border-[#d3d3d3] dark:border-[#9e9e9e] p-2 rounded-full text-[12px] text-[#d3d3d3] flex items-center gap-3">
+              <div className="border-[1px] text-black dark:text-white search-box border-black dark:border-[#9e9e9e] p-2 rounded-full text-[12px] flex items-center gap-3">
                 <button
                   type="button"
                   title="search-btn"
@@ -69,6 +70,18 @@ const Cryptocurrencies = () => {
                   onChange={(e) => setSearchParam(e.target.value)}
                   value={searchParam}
                 />
+                {searchParam.length > 0 && (
+                  <button
+                    type="button"
+                    title="cancel-btn"
+                    onClick={() => {
+                      setFilteredCoins(data?.data?.coins);
+                      setSearchParam("");
+                    }}
+                  >
+                    <MdCancel size={20} />
+                  </button>
+                )}
               </div>
             )}
           </div>
