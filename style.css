@@ -30,6 +30,18 @@ tbody tr:nth-child(odd){
   background-color: #0a0a0a;
 }
 
+.search-box{
+  animation: long 0.5s ease-in-out;
+}
+@keyframes long{
+  0%{
+    width: 45px;
+  }
+  100%{
+    width: 200px;
+  }
+}
+
 /* loader from https://uiverse.io/G4b413l/jolly-kangaroo-36 */
 .newtons-cradle {
   --uib-size: 50px;

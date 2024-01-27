@@ -8,7 +8,6 @@ const HomePage = () => {
   const firstCoin = data?.data?.coins[0];
   const first10Coins = data?.data?.coins.slice(0, 12);
   const stats = data?.data?.stats;
-  console.log(first10Coins)
   return (
     <div className="md:h-[100vh] flex relative w-full">
       {isLoading ? (
@@ -18,11 +17,13 @@ const HomePage = () => {
           <div className="newtons-cradle__dot"></div>
           <div className="newtons-cradle__dot"></div>
         </div>
+      ) : error ? (
+        <p className="text-white text-3xl">An error occured</p>
       ) : (
         <div className="w-full p-2">
           <HeroSection coin={firstCoin} />
-          <CryptoStats stats={stats}/>
-          <TopCoins coins={first10Coins}/>
+          <CryptoStats stats={stats} />
+          <TopCoins coins={first10Coins} />
         </div>
       )}
     </div>
