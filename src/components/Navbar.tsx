@@ -10,13 +10,17 @@ const Navbar = () => {
   return (
     <nav className="bg-white sticky z-50 top-0 w-full dark:bg-[#0a0a0a] flex p-1 dark:text-white border-b-[1px] border-[#efefef] dark:border-[#171717]">
       <div className="container mx-auto p-3 flex justify-between items-center">
-        <h1 className="text-2xl font-bold ">CryptOzone</h1>
+        <Link to={"/"}>
+          <h1 className="text-2xl font-bold ">CryptOzone</h1>
+        </Link>
         <div className="text-black hidden md:flex dark:text-white  items-center gap-6">
           <Link to={"/"}>
             <MenuItem text="Home" />
           </Link>
           <MenuItem text="Exchanges" />
-          <MenuItem text="News" />
+          <Link to={"/news"}>
+            <MenuItem text="News" />
+          </Link>
           <div className="flex items-center cursor-pointer hover:bg-[#c0c0c0] dark:hover:bg-[#242424] p-1.5 rounded-lg">
             <ThemeSwitch />
           </div>
@@ -43,7 +47,9 @@ const Navbar = () => {
                 <MenuItem text="Exchanges" />
               </li>
               <li>
-                <MenuItem text="News" />
+                <Link to={"/news"}>
+                  <MenuItem text="News" />
+                </Link>
               </li>
               <li>
                 <div className="flex items-center cursor-pointer hover:bg-[#c0c0c0] dark:hover:bg-[#242424] p-1.5 rounded-lg">
