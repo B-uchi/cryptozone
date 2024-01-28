@@ -1,25 +1,13 @@
-import { useEffect } from "react";
 import CryptoStats from "../components/CryptoStats";
 import HeroSection from "../components/HeroSection";
 import TopCoins from "../components/TopCoins";
 import { useGetCryptocurrenciesQuery } from "../util/cryptocurrencyAPI";
-import axios from 'axios'
 
 const HomePage = () => {
   const { data, error, isLoading } = useGetCryptocurrenciesQuery({});
   const firstCoin = data?.data?.coins[0];
   const first10Coins = data?.data?.coins.slice(0, 12);
   const stats = data?.data?.stats;
-
-  useEffect(()=>{
-    const fetchNews = async () => {
-      const { data } = await axios.get('https://min-api.cryptocompare.com/data/v2/news/?lang=EN')
-      console.log(data)
-      
-    }
-    fetchNews()
-  },[])
-
 
   return (
     <div className="md:max-h-fit mt-0 flex relative w-full">
