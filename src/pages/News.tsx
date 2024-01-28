@@ -17,7 +17,7 @@ const News = () => {
         </div>
       ) : (
         <div className="">
-          <NewsCarousel news={newsdata}/> 
+          <NewsCarousel news={newsdata.slice(0,5)}/> 
         </div>
       )}
     </div>
