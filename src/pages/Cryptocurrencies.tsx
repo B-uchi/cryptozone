@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import CoinGrid from "../components/CoinGrid";
-import { useGetCryptocurrenciesQuery } from "../services/cryptocurrencyAPI";
+import { useGetCryptocurrenciesQuery } from "../util/cryptocurrencyAPI";
 import { IoMdSearch } from "react-icons/io";
 import { MdCancel } from "react-icons/md";
 import { HeroSectionProps } from "../components/HeroSection";

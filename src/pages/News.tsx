@@ -1,40 +1,18 @@
 import { useEffect, useState } from "react";
 import NewsCarousel from "../components/NewsCarousel";
 import axios from "axios";
+import useFetchNews from "../util/useFetchNews";
 
 const News = () => {
   const [carousel, setCarousel] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-    console.log(carousel)
-  useEffect(() => {
-    const fetchNews = () => {
-      const requestOptions = {
-        method: "POST",
-        url: "https://newsnow.p.rapidapi.com/",
-        headers: {
-          "content-type": "application/json",
-          "X-RapidAPI-Key": import.meta.env.VITE_RAPIDAPI_KEY,
-          "X-RapidAPI-Host": "newsnow.p.rapidapi.com",
-        },
-        data: {
-          text: "cryptocurrency",
-          region: "wt-wt",
-          max_results: 40,
-        },
-      };
-      axios
-        .request(requestOptions)
-        .then((response) => {
-          setCarousel(response.data.news.slice(0, 5));
-          setIsLoading(false);
-        })
-        .catch((e) => {
-          console.log(e);
-          setIsLoading(false);
-        });
-    };
-    fetchNews();
-  }, []);
+  const [isloading, news] = useFetchNews({
+    category: "cryptocurrency",
+    count: 5,
+  });
+  console.log(news, isloading)
+
+
   return (
     <div className="text-black dark:text-white">
       {isLoading ? (
@@ -49,7 +27,7 @@ const News = () => {
         </div>
       ) : (
         <div className="">
-            <NewsCarousel news={carousel} />
+          <NewsCarousel news={carousel} />
         </div>
       )}
     </div>

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import CryptoStats from "../components/CryptoStats";
 import HeroSection from "../components/HeroSection";
 import TopCoins from "../components/TopCoins";
-import { useGetCryptocurrenciesQuery } from "../services/cryptocurrencyAPI";
+import { useGetCryptocurrenciesQuery } from "../util/cryptocurrencyAPI";
 import axios from 'axios'
 
 const HomePage = () => {
