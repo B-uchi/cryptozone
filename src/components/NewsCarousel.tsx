@@ -29,22 +29,22 @@ const NewsCarousel: React.FC<NewsCarouselProps> = (props) => {
     setIndex((index - 1 + carouselItems.length) % carouselItems.length);
   };
   return (
-    <div className="w-full mt-5 flex justify-center items-center">
-      <div className="w-[100%] h-[60vh] bg-white dark:bg-black flex justify-center items-center border-[2px] border-[#efefef] dark:border-[#171717] cursor-pointer relative">
-        <div className="flex ">
-          <div className="w-1/2 flex justify-center">
+    <div className="w-full mt-5 flex ">
+      <div className="w-[100%] h-[70vh] md:h-[60vh] bg-white dark:bg-black flex justify-center items-center border-[2px] border-[#efefef] dark:border-[#171717] cursor-pointer relative">
+        <div className="flex flex-col md:flex-row items-center justify-center">
+          <div className="md:w-1/2 flex md:justify-center md:items-center bg-red-400">
             <img
               src={carouselItems[index].imageurl}
               alt=""
-              className="w-[50%] rounded-md"
+              className="w-[80%] md:w-[70%] rounded-md"
             />
           </div>
-          <div className="w-1/2 flex flex-col justify-center">
-            <h1 className="text-3xl font-bold">{carouselItems[index].title}</h1>
-            <p className="text-md w-[90%] mt-3 line-clamp-2">
+          <div className="w-[90%] md:w-1/2 flex flex-col justify-center">
+            <h1 className="text-lg md:text-3xl p-2 line-clamp-2 font-bold">{carouselItems[index].title}</h1>
+            <p className="text-md hidden w-[90%] mt-3 line-clamp-2">
               {carouselItems[index].body}
             </p>
-            <div className="">
+            <div className="hidden md:block">
               <p className="text-sm mt-3">
                 Source: {carouselItems[index].source}
               </p>
@@ -54,7 +54,7 @@ const NewsCarousel: React.FC<NewsCarouselProps> = (props) => {
             </div>
           </div>
         </div>
-        <div className="absolute left-2 top-[50%] text-black dark:text-white">
+        <div className="absolute left-2 top-[50%] text-black dark:text-white bg-[#12131f] flex p-1 rounded-full">
           <button
             type="button"
             title="next_article"
@@ -63,7 +63,7 @@ const NewsCarousel: React.FC<NewsCarouselProps> = (props) => {
             <IoChevronBack size={25} />
           </button>
         </div>
-        <div className="absolute right-2 top-[50%] text-black dark:text-white">
+        <div className="absolute right-2 top-[50%] text-black dark:text-white bg-[#12131f] flex p-1 rounded-full">
           <button
             type="button"
             title="next_article"

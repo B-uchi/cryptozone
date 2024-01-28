@@ -85,7 +85,7 @@ const Cryptocurrencies = () => {
               </div>
             )}
           </div>
-          <CoinGrid coins={filteredCoins} />
+          <CoinGrid coins={filteredCoins} gridSize="4"/>
         </div>
       )}
     </div>
