@@ -1,44 +1,37 @@
-import { useState } from "react"
-import axios from "axios"
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { NewsCarouselProps } from "../components/NewsCarousel";
 
-type useFetchNewsProps = {
-    category: string,
-    count: number
-}
+const useFetchNews = () => {
+  const [newsdata, setNews] = useState<any>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-const useFetchNews = (props: useFetchNewsProps) => {
-    const [news, setNews] = useState([])
-    const [isloading, setIsLoading] = useState(true)
-    const { category, count } = props
-
-    const fetchNews = () => {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
         const requestOptions = {
           method: "POST",
-          url: "https://newsnow.p.rapidapi.com/",
+          url: `https://min-api.cryptocompare.com/data/v2/news/?lang=EN&api_key=${
+            import.meta.env.VITE_CRYPTOCOMPAREAPI
+          }`,
           headers: {
-            "content-type": "application/json",
-            "X-RapidAPI-Key": import.meta.env.VITE_RAPIDAPI_KEY,
-            "X-RapidAPI-Host": "newsnow.p.rapidapi.com",
-          },
-          data: {
-            text: {category} || "cryptocurrency",
-            region: "wt-wt",
-            max_results: {count},
+            "Content-Type": "application/json",
           },
         };
-        axios
-          .request(requestOptions)
-          .then((response) => {
-            console.log(response.data.news);
-            setIsLoading(false);
-          })
-          .catch((e) => {
-            console.log(e.message);
-            setIsLoading(false);
-          });
-      };
-      fetchNews();
-      return [isloading, news]
-}
+        const response = await axios.request(requestOptions);
+        const responseData: NewsCarouselProps[] = response.data.Data
+        setNews(responseData);
+      } catch (error) {
+        console.error("Error fetching news:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
-export default useFetchNews
+    fetchData();
+  }, []); 
+
+  return [newsdata, isLoading];
+};
+
+export default useFetchNews;
