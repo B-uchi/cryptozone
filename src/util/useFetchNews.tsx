@@ -5,6 +5,7 @@ import { NewsCarouselProps } from "../components/NewsCarousel";
 const useFetchNews = () => {
   const [newsdata, setNews] = useState<any>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,6 +24,7 @@ const useFetchNews = () => {
         setNews(responseData);
       } catch (error) {
         console.error("Error fetching news:", error);
+        setError(true)
       } finally {
         setIsLoading(false);
       }
@@ -31,7 +33,7 @@ const useFetchNews = () => {
     fetchData();
   }, []); 
 
-  return [newsdata, isLoading];
+  return [newsdata, isLoading, error];
 };
 
 export default useFetchNews;

@@ -19,7 +19,9 @@ const HomePage = () => {
           <div className="newtons-cradle__dot"></div>
         </div>
       ) : error ? (
-        <p className="text-white text-3xl">An error occured</p>
+        <p className="text-black dark:text-white text-xl absolute left-[50%] translate-x-[-50%] top-[50vh]">
+          A network error occured....
+        </p>
       ) : (
         <div className="w-full p-2">
           <HeroSection coin={firstCoin} />

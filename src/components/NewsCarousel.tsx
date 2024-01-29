@@ -54,7 +54,7 @@ const NewsCarousel: React.FC<NewsCarouselProps> = (props) => {
             </div>
           </div>
         </div>
-        <div className="absolute left-2 top-[50%] text-black dark:text-white bg-[#12131f] flex p-1 rounded-full">
+        <div className="absolute left-2 top-[50%] text-black dark:text-white dark:bg-[#12131f] bg-slate-300 flex p-1 rounded-full">
           <button
             type="button"
             title="next_article"
@@ -63,7 +63,7 @@ const NewsCarousel: React.FC<NewsCarouselProps> = (props) => {
             <IoChevronBack size={25} />
           </button>
         </div>
-        <div className="absolute right-2 top-[50%] text-black dark:text-white bg-[#12131f] flex p-1 rounded-full">
+        <div className="absolute right-2 top-[50%] text-black dark:text-white bg-slate-300 dark:bg-[#12131f] flex p-1 rounded-full">
           <button
             type="button"
             title="next_article"
