@@ -32,16 +32,16 @@ const NewsCarousel: React.FC<NewsCarouselProps> = (props) => {
     <div className="w-full mt-5 flex ">
       <div className="w-[100%] h-[70vh] md:h-[60vh] bg-white dark:bg-black flex justify-center items-center border-[2px] border-[#efefef] dark:border-[#171717] cursor-pointer relative">
         <div className="flex flex-col md:flex-row items-center justify-center">
-          <div className="md:w-1/2 flex md:justify-center md:items-center bg-red-400">
+          <div className="md:w-[50%] flex md:justify-center md:items-center ">
             <img
               src={carouselItems[index].imageurl}
               alt=""
-              className="w-[80%] md:w-[70%] rounded-md"
+              className="w-[80%] md:w-[60%] rounded-md"
             />
           </div>
-          <div className="w-[90%] md:w-1/2 flex flex-col justify-center">
-            <h1 className="text-lg md:text-3xl p-2 line-clamp-2 font-bold">{carouselItems[index].title}</h1>
-            <p className="text-md hidden w-[90%] mt-3 line-clamp-2">
+          <div className="w-[90%] md:w-[50%] flex flex-col justify-center items-start p-2">
+            <h1 className="text-lg md:text-3xl line-clamp-1 md:line-clamp-none font-bold">{carouselItems[index].title}</h1>
+            <p className="text-md hidden md:block w-[90%] md:w-[80%] mt-3 line-clamp-3">
               {carouselItems[index].body}
             </p>
             <div className="hidden md:block">

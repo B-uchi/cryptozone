@@ -18,7 +18,7 @@ const NewsItem: React.FC<NewsItemProps> = (props) => {
             <a href={news.url} target="_blank">
               <button
                 type="button"
-                className="p-1 px-2 mt-3 bg-slate-400 rounded-lg"
+                className="p-1 px-2 mt-3 bg-[#b6b4b4] dark:bg-[#202236] rounded-lg"
               >
                 Read more
               </button>

@@ -41,7 +41,9 @@ const Navbar = () => {
           <div className="container">
             <ul className="flex flex-col gap-5 items-center">
               <li>
-                <MenuItem text="Home" />
+                <Link to={"/"}>
+                  <MenuItem text="Home" />
+                </Link>
               </li>
               <li>
                 <MenuItem text="Exchanges" />

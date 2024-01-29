@@ -16,7 +16,7 @@ const News = () => {
           <div className="newtons-cradle__dot"></div>
         </div>
       ) : error ? (
-        <p className="text-black dark:text-white text-xl absolute left-[50%] translate-x-[-50%] top-[50vh]">
+        <p className="text-black dark:text-white  absolute left-[50%] translate-x-[-50%] top-[50vh] text-sm md:text-xl">
           A network error occured....
         </p>
       ) : (

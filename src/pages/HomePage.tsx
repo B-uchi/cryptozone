@@ -19,7 +19,7 @@ const HomePage = () => {
           <div className="newtons-cradle__dot"></div>
         </div>
       ) : error ? (
-        <p className="text-black dark:text-white text-xl absolute left-[50%] translate-x-[-50%] top-[50vh]">
+        <p className="text-black dark:text-white text-sm md:text-xl absolute left-[50%] translate-x-[-50%] top-[50vh]">
           A network error occured....
         </p>
       ) : (
