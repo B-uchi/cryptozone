@@ -11,11 +11,11 @@ export type NewsItemProps = {
     url: string;
     source: string;
     tags: string;
-  }
+  };
 };
 
 export type NewsCarouselProps = {
-  news: NewsItemProps['news'][];
+  news: NewsItemProps["news"][];
 };
 
 const NewsCarousel: React.FC<NewsCarouselProps> = (props) => {
@@ -30,20 +30,32 @@ const NewsCarousel: React.FC<NewsCarouselProps> = (props) => {
   };
   return (
     <div className="w-full mt-5 flex ">
-      <div className="w-[100%] h-[70vh] md:h-[60vh] bg-white dark:bg-black flex justify-center items-center border-[2px] border-[#efefef] dark:border-[#171717] cursor-pointer relative">
-        <div className="flex flex-col md:flex-row items-center justify-center">
-          <div className="md:w-[50%] flex md:justify-center md:items-center ">
+      <div className="w-[100%] h-[73vh] md:h-[60vh] bg-white dark:bg-black flex justify-center items-center border-[2px] border-[#efefef] dark:border-[#171717] cursor-pointer relative">
+        <div className="md:flex flex-col md:flex-row items-center justify-center  h-full">
+          <div className="md:w-[50%] flex justify-center items-center ">
             <img
               src={carouselItems[index].imageurl}
               alt=""
-              className="w-[80%] md:w-[60%] rounded-md"
+              className="w-full md:w-[60%] rounded-md"
             />
           </div>
-          <div className="w-[90%] md:w-[50%] flex flex-col justify-center items-start p-2">
-            <h1 className="text-lg md:text-3xl line-clamp-1 md:line-clamp-none font-bold">{carouselItems[index].title}</h1>
-            <p className="text-md hidden md:block w-[90%] md:w-[80%] mt-3 line-clamp-3">
+          <div className="md:w-[50%] flex flex-col justify-center items-start p-2">
+            <h1 className="text-lg md:text-3xl line-clamp-1 md:line-clamp-none font-bold">
+              {carouselItems[index].title}
+            </h1>
+            <p className="md:text-md text-sm  md:w-[80%] mt-3 line-clamp-2">
               {carouselItems[index].body}
             </p>
+            <div className="flex w-full justify-center">
+              <a href={carouselItems[index].url} target="_blank">
+                <button
+                  type="button"
+                  className="p-1 px-2 mt-3 bg-[#b6b4b4] dark:bg-[#202236] rounded-lg"
+                >
+                  Read more
+                </button>
+              </a>
+            </div>
             <div className="hidden md:block">
               <p className="text-sm mt-3">
                 Source: {carouselItems[index].source}
