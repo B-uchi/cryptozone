@@ -25,7 +25,7 @@ const CoinGrid = (props: TopCoinsProps) => {
             </p>
           )}
       {news && news.length > 0
-        ? news?.map((news) => <NewsItem news={news} key={news.title} />)
+        ? news?.map((news) => <NewsItem news={news} key={news.id} />)
         : news && (
             <p className="dark:text-white text-black absolute top-[50px] left-[50%] text-xl mx-auto">
               No news found

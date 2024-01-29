@@ -4,7 +4,6 @@ import useFetchNews from "../util/useFetchNews";
 
 const News = () => {
   const [newsdata, isLoading, error] = useFetchNews();
-  console.log(newsdata);
 
   return (
     <div className="text-black dark:text-white">

@@ -43,7 +43,7 @@ const Cryptocurrencies = () => {
             className="flex justify-evenly items-baseline w-full
           "
           >
-            <h1 className="text-2xl mb-5 font-bold">Cryptocurrencies</h1>
+            <h1 className="text-xl mr-2 md:text-2xl mb-5 font-bold">Cryptocurrencies</h1>
             {!showSearch ? (
               <div className="p-2">
                 <button

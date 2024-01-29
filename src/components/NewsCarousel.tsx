@@ -46,7 +46,7 @@ const NewsCarousel: React.FC<NewsCarouselProps> = (props) => {
             <p className="md:text-md text-sm  md:w-[80%] mt-3 line-clamp-2">
               {carouselItems[index].body}
             </p>
-            <div className="flex w-full justify-center">
+            <div className="flex w-full justify-center md:justify-normal">
               <a href={carouselItems[index].url} target="_blank">
                 <button
                   type="button"
