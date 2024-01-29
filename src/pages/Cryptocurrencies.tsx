@@ -37,13 +37,19 @@ const Cryptocurrencies = () => {
           <div className="newtons-cradle__dot"></div>
           <div className="newtons-cradle__dot"></div>
         </div>
+      ) : error ? (
+        <p className="text-black dark:text-white  absolute left-[50%] translate-x-[-50%] top-[50vh] text-sm md:text-xl">
+          A network error occured....
+        </p>
       ) : (
         <div className="w-[90%] p-2 mt-3">
           <div
             className="flex justify-evenly items-baseline w-full
           "
           >
-            <h1 className="text-xl mr-2 md:text-2xl mb-5 font-bold">Cryptocurrencies</h1>
+            <h1 className="text-xl mr-2 md:text-2xl mb-5 font-bold">
+              Cryptocurrencies
+            </h1>
             {!showSearch ? (
               <div className="p-2">
                 <button
@@ -85,7 +91,7 @@ const Cryptocurrencies = () => {
               </div>
             )}
           </div>
-          <CoinGrid coins={filteredCoins} gridSize="4"/>
+          <CoinGrid coins={filteredCoins} gridSize="4" />
         </div>
       )}
     </div>
