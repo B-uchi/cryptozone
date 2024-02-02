@@ -35,7 +35,7 @@ const NewsCarousel: React.FC<NewsCarouselProps> = (props) => {
   };
   return (
     <div className="w-full mt-5 flex ">
-      <div className="w-[100%] h-[73vh] md:h-[60vh] bg-white dark:bg-black flex justify-center items-center border-[2px] border-[#efefef] dark:border-[#171717] cursor-pointer relative">
+      <div className="w-[100%] h-[90%] md:h-[60vh] bg-white dark:bg-black flex justify-center items-center border-[2px] border-[#efefef] dark:border-[#171717] cursor-pointer relative">
         <div className="md:flex flex-col md:flex-row items-center justify-center  h-full">
           <div className="md:w-[50%] flex justify-center items-center ">
             <img
@@ -71,6 +71,20 @@ const NewsCarousel: React.FC<NewsCarouselProps> = (props) => {
               </p>
             </div>
           </div>
+          <div className="md:absolute md:bottom-2 text-black dark:text-white bg-slate-300 dark:bg-[#12131f] flex p-2 rounded-full gap-1 w-16 mb-2 md:mb-0 mx-auto">
+          {arbitraryArray.map((_, i) => (
+            <div
+              key={i}
+              className={`w-2 h-2 rounded-full ${
+                i === index ? "bg-black dark:bg-white" : "bg-white dark:bg-black"
+              }`
+            
+            }
+
+            />
+
+          ))}
+        </div>
         </div>
         <div className="absolute left-2 top-[50%] text-black dark:text-white dark:bg-[#12131f] bg-slate-300 flex p-1 rounded-full">
           <button
@@ -90,20 +104,7 @@ const NewsCarousel: React.FC<NewsCarouselProps> = (props) => {
             <IoChevronForward size={25} />
           </button>
         </div>
-        <div className="absolute bottom-2 text-black dark:text-white bg-slate-300 dark:bg-[#12131f] flex p-2 rounded-full gap-1">
-          {arbitraryArray.map((_, i) => (
-            <div
-              key={i}
-              className={`w-2 h-2 rounded-full ${
-                i === index ? "bg-black dark:bg-white" : "bg-white dark:bg-black"
-              }`
-            
-            }
-
-            />
-
-          ))}
-        </div>
+        
       </div>
     </div>
   );
