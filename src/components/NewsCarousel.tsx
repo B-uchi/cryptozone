@@ -36,6 +36,7 @@ const NewsCarousel: React.FC<NewsCarouselProps> = (props) => {
             <img
               src={carouselItems[index].imageurl}
               alt=""
+              loading="lazy"
               className="w-full md:w-[60%] rounded-md"
             />
           </div>
