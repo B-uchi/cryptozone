@@ -9,7 +9,7 @@ const CoinItem = (props: CoinItemProps) => {
   const coin = props.coin;
   return (
     <div
-      className="p-6 md:w-[330px] hover:bg-gray-100 dark:hover:bg-gray-500 rounded-lg bg-white dark:bg-black border-[1px] border-[#efefef] dark:border-[#171717] cursor-pointer flex flex-col justify-center items-center gap-2"
+      className="p-6 w-full md:w-[330px] hover:bg-gray-100 dark:hover:bg-gray-500 rounded-lg bg-white dark:bg-black border-[1px] border-[#efefef] dark:border-[#171717] cursor-pointer flex flex-col justify-center items-center gap-2"
     >
       <img src={coin.iconUrl} alt="coin_icon" className="w-20 mb-3" />
       <p className="font-bold text-center">

@@ -4,7 +4,7 @@ import { NewsItemProps } from "./NewsCarousel";
 const NewsItem: React.FC<NewsItemProps> = (props) => {
   const news = props.news;
   return (
-    <div className="p-3 gap-3 flex-grow rounded-md h-[200px] md:w-[450px] bg-white dark:bg-[#12131f] flex items-center justify-center border-[1px] border-[#efefef] dark:border-[#171717]">
+    <div className="p-3 gap-3 w-full flex-grow rounded-md h-[200px] md:w-[450px] bg-white dark:bg-[#12131f] flex items-center justify-center border-[1px] border-[#efefef] dark:border-[#171717]">
       <div className="w-[60%] flex flex-col justify-center">
         <div className="">
           <h1 className="line-clamp-1 font-bold">{news.title}</h1>
