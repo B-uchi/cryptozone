@@ -21,6 +21,11 @@ export type NewsCarouselProps = {
 const NewsCarousel: React.FC<NewsCarouselProps> = (props) => {
   const [index, setIndex] = useState(0);
   const carouselItems = props.news;
+  const arbitraryArray = [1,2,3,4,5]
+
+  // setInterval(() => {
+  //   nextCarouselItem();
+  // }, 20000);
 
   const nextCarouselItem = () => {
     setIndex((index + 1) % carouselItems.length);
@@ -44,7 +49,7 @@ const NewsCarousel: React.FC<NewsCarouselProps> = (props) => {
             <h1 className="text-lg md:text-3xl line-clamp-1 md:line-clamp-none font-bold">
               {carouselItems[index].title}
             </h1>
-            <p className="md:text-md text-sm  md:w-[80%] mt-3 line-clamp-2">
+            <p className="md:text-md text-sm line-clamp-2 md:w-[80%] mt-3 md:line-clamp-4">
               {carouselItems[index].body}
             </p>
             <div className="flex w-full justify-center md:justify-normal">
@@ -84,6 +89,20 @@ const NewsCarousel: React.FC<NewsCarouselProps> = (props) => {
           >
             <IoChevronForward size={25} />
           </button>
+        </div>
+        <div className="absolute bottom-2 text-black dark:text-white bg-slate-300 dark:bg-[#12131f] flex p-2 rounded-full gap-1">
+          {arbitraryArray.map((_, i) => (
+            <div
+              key={i}
+              className={`w-2 h-2 rounded-full ${
+                i === index ? "bg-black dark:bg-white" : "bg-white dark:bg-black"
+              }`
+            
+            }
+
+            />
+
+          ))}
         </div>
       </div>
     </div>
