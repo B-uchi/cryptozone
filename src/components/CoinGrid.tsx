@@ -12,7 +12,6 @@ export type TopCoinsProps = {
 const CoinGrid = (props: TopCoinsProps) => {
   const coins = props.coins;
   const news = props.news;
-  const gridSize = props.gridSize;
   const styles =
     `flex flex-wrap gap-5 mt-2`;
   return (
