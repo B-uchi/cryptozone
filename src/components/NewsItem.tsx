@@ -27,7 +27,7 @@ const NewsItem: React.FC<NewsItemProps> = (props) => {
         </div>
       </div>
       <div className="w-[30%] p-2">
-        <img src={news.imageurl} alt="" className="w-full rounded-md" />
+        <img src={news.imageurl} alt="" loading="lazy" className="w-full rounded-md" />
       </div>
     </div>
   );
