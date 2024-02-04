@@ -15,7 +15,7 @@ function App() {
             <Route path="/coins" element={<Cryptocurrencies/>} />
             <Route path="/news" element={<News/>} />
             <Route path="*" element={<h1>404 Not Found</h1>} />
-            <Route path="/coins/:id" element={<CoinDetails/>} />
+            <Route path="/coins/:uuid" element={<CoinDetails/>} />
           </Routes>
       </div>
     </Router>
