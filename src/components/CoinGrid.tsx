@@ -17,7 +17,7 @@ const CoinGrid = (props: TopCoinsProps) => {
   return (
     <div className={styles}>
       {coins && coins.length > 0
-        ? coins?.map((coin) => <CoinItem coin={coin} key={coin.id} />)
+        ? coins?.map((coin) => <CoinItem coin={coin} key={coin.uuid} />)
         : coins && (
             <p className="dark:text-white text-black absolute top-[50px] left-[50%] text-xl mx-auto">
               No coins found

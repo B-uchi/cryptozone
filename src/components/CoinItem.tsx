@@ -10,7 +10,7 @@ const CoinItem = (props: CoinItemProps) => {
   const coin = props.coin;
   console.log(coin)
   return (
-    <Link to={`/coins/${coin.id}`}>
+    <Link to={`/coins/${coin.uuid}`}>
     <div
       className="p-6 w-full md:w-[330px] hover:bg-gray-100 dark:hover:bg-gray-500 rounded-lg bg-white dark:bg-black border-[1px] border-[#efefef] dark:border-[#171717] cursor-pointer flex flex-col justify-center items-center gap-2" 
     >
