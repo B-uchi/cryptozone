@@ -54,7 +54,7 @@ const LineChart: React.FC<any> = ({
 
   return (
     <div className="mt-3">
-      <div className="flex justify-between">
+      <div className="flex justify-between text-black">
         <h1 className="font-bold text-2xl">{coinName} Price Chart</h1>
         <div className="flex gap-5">
           <p className="font-bold">Change: {priceHistoryData?.change}</p>

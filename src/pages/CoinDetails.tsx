@@ -21,10 +21,10 @@ const CoinDetails = () => {
   const time = ["3h", "24h", "7d", "30d", "3m", "1y", "3y", "5y"];
   const { uuid } = useParams<{ uuid: string }>();
   const { data, isLoading, error } = useGetCryptocurrencyDetailsQuery(uuid);
-  const { data: priceHistory, isLoading: priceLoading} =
+  const { data: priceHistory, isLoading: priceLoading } =
     useGetCryptocurrencyPriceHistoryQuery({
       uuid: uuid,
-      timePeriod: timePeriod
+      timePeriod: timePeriod,
     });
   const priceHistoryData = priceHistory?.data;
   const coinData = data?.data?.coin;
@@ -87,7 +87,7 @@ const CoinDetails = () => {
   ];
   return (
     <div className="md:max-h-fit mt-0 flex relative w-full">
-      {isLoading  ? (
+      {isLoading ? (
         <div className="newtons-cradle absolute left-[50%] top-[50vh]">
           <div className="newtons-cradle__dot"></div>
           <div className="newtons-cradle__dot"></div>
@@ -107,64 +107,77 @@ const CoinDetails = () => {
             exit={{ opacity: 0 }}
             className="w-full"
           >
-            <div className="text-black dark:text-white flex flex-col items-center p-2 w-full">
-              <div className="mt-2 w-full text-center flex flex-col items-center">
-                <img className="w-32" src={coinData.iconUrl} alt="" />
+            <div className="text-black dark:text-white flex flex-col items-center p-5 w-full">
+              <div className="flex w-[90%] justify-between mb-5">
+                <div className="mt-2 border-[1px] dark:bg-black bg-white rounded-xl border-[#efefef] dark:border-[#171717] justify-center text-center flex flex-col items-center w-[45%] shadow-sm">
+                  <img className="w-32" src={coinData.iconUrl} alt="" />
 
-                <h1 className="font-bold mt-3 text-3xl flex items-center gap-2">
-                  {coinData.name} ({coinData.symbol}){" "}
-                </h1>
-                <p className="text-sm md:text-lg">
-                  {HTMLReactParser(coinData.description)}
-                </p>
-              </div>
-
-              <div className="w-[90%] bg-white shadow-md p-2 mt-3 rounded-lg">
-                <select
-                  value={timePeriod}
-                  className="border-black border-[2px] rounded-lg w-20"
-                  title="chart time period"
-                  id=""
-                  onChange={(event) => setTimePeriod(event.target.value)}
-                >
-                  {time.map((date, index) => (
-                    <option key={index} value={date}>
-                      {date}
-                    </option>
-                  ))}
-                </select>
-                {
-                  priceHistoryData && (
-                    <LineChart
-                      priceHistoryData={priceHistoryData}
-                      currentPrice={coinData.price}
-                      coinName={coinData.name}
-                    />
-                  )
-                }
-              </div>
-
-              <div className="mt-3">
-                <div className="">
-                  <h1 className="font-bold text-2xl text-center">
-                    {coinData.name} Stats
+                  <h1 className="font-bold mt-3 text-3xl flex items-center gap-2">
+                    {coinData.name} ({coinData.symbol}){" "}
                   </h1>
+                  <p className="text-sm md:text-lg dark:text-[rgb(221,210,210)]">
+                    {HTMLReactParser(coinData.description)}
+                  </p>
+                </div>
+                <div className="mt-2 border-[1px] dark:bg-black bg-white rounded-xl border-[#efefef] dark:border-[#171717] flex w-[45%] p-3 justify-center items-center shadow-sm">
+                  <div className="">
+                    <h1 className="font-bold text-2xl text-center">
+                      {coinData.name} Stats
+                    </h1>
 
-                  <div className="w-[500px]">
-                    {coinStat.map((stat, index) => (
-                      <div
-                        key={index}
-                        className="flex items-center justify-between p-2 border-b-[1px] border-[#e1e1e1]"
-                      >
-                        <span className="flex items-center gap-2">
-                          {stat.icon}
-                          {stat.title}:
-                        </span>{" "}
-                        <span>{stat.value}</span>
-                      </div>
-                    ))}
+                    <div className="w-[500px]">
+                      {coinStat.map((stat, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center justify-between p-2 border-b-[1px] dark:text-[rgb(221,210,210)] border-[#e1e1e1] dark:border-[#202020]"
+                        >
+                          <span className="flex items-center gap-2">
+                            {stat.icon}
+                            {stat.title}:
+                          </span>{" "}
+                          <span>{stat.value}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
+              </div>
+              <div className="w-[90%] relative border-[2px] border-[#efefef] dark:border-[#171717] bg-white dark:bg-slate-300 h-[100vh] shadow-md p-2 mt-3 rounded-lg">
+                {priceLoading ? (
+                  <div className="newtons-cradle absolute left-[50%] top-[50vh]">
+                    <div className="newtons-cradle__dot"></div>
+                    <div className="newtons-cradle__dot"></div>
+                    <div className="newtons-cradle__dot"></div>
+                    <div className="newtons-cradle__dot"></div>
+                  </div>
+                ) : (
+                  <div className="">
+                    <div className="flex gap-2 text-black items-center">
+                      Select a time period:
+                      <select
+                        value={timePeriod}
+                        className="border-black border-[2px] rounded-lg w-20"
+                        title="chart time period"
+                        id=""
+                        onChange={(event) => setTimePeriod(event.target.value)}
+                      >
+                        {time.map((date, index) => (
+                          <option key={index} value={date}>
+                            {date}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+
+                    {priceHistoryData && (
+                      <LineChart
+                        priceHistoryData={priceHistoryData}
+                        currentPrice={coinData.price}
+                        coinName={coinData.name}
+                      />
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           </motion.div>
