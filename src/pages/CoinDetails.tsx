@@ -14,15 +14,19 @@ import { CgArrowsExchangeV } from "react-icons/cg";
 import { GoTrophy } from "react-icons/go";
 import { IoTrendingUp } from "react-icons/io5";
 import millify from "millify";
+import LineChart from "../components/LineChart";
 
 const CoinDetails = () => {
-  const [timePeriod, setTimePeriod] = useState("7d");
+  const [timePeriod, setTimePeriod] = useState("5y");
+  const time = ["3h", "24h", "7d", "30d", "3m", "1y", "3y", "5y"];
   const { uuid } = useParams<{ uuid: string }>();
   const { data, isLoading, error } = useGetCryptocurrencyDetailsQuery(uuid);
-  const { data: priceHistoryData, isLoading: priceHistoryLoading } = useGetCryptocurrencyPriceHistoryQuery({
-    coinId: uuid,
-    timePeriod,
-  });
+  const { data: priceHistory, isLoading: priceLoading} =
+    useGetCryptocurrencyPriceHistoryQuery({
+      uuid: uuid,
+      timePeriod: timePeriod
+    });
+  const priceHistoryData = priceHistory?.data;
   const coinData = data?.data?.coin;
   type CoinStat = {
     title: string;
@@ -83,7 +87,7 @@ const CoinDetails = () => {
   ];
   return (
     <div className="md:max-h-fit mt-0 flex relative w-full">
-      {isLoading && priceHistoryLoading ? (
+      {isLoading  ? (
         <div className="newtons-cradle absolute left-[50%] top-[50vh]">
           <div className="newtons-cradle__dot"></div>
           <div className="newtons-cradle__dot"></div>
@@ -115,7 +119,30 @@ const CoinDetails = () => {
                 </p>
               </div>
 
-              
+              <div className="w-[90%] bg-white shadow-md p-2 mt-3 rounded-lg">
+                <select
+                  value={timePeriod}
+                  className="border-black border-[2px] rounded-lg w-20"
+                  title="chart time period"
+                  id=""
+                  onChange={(event) => setTimePeriod(event.target.value)}
+                >
+                  {time.map((date, index) => (
+                    <option key={index} value={date}>
+                      {date}
+                    </option>
+                  ))}
+                </select>
+                {
+                  priceHistoryData && (
+                    <LineChart
+                      priceHistoryData={priceHistoryData}
+                      currentPrice={coinData.price}
+                      coinName={coinData.name}
+                    />
+                  )
+                }
+              </div>
 
               <div className="mt-3">
                 <div className="">

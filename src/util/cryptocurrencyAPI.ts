@@ -23,7 +23,7 @@ export const cryptocurrencyApi = createApi({
       query: (uuid) => createRequest(`/coin/${uuid}`),
     }),
     getCryptocurrencyPriceHistory: builder.query({
-      query: ({uuid, timeStamp}) => createRequest(`/coin/${uuid}/history/${timeStamp}`),
+      query: ({uuid, timePeriod}) => createRequest(`/coin/${uuid}/history?timePeriod=${timePeriod}`),
     }),
   }),
 });
