@@ -4,6 +4,7 @@ import { useGetCryptocurrenciesQuery } from "../util/cryptocurrencyAPI";
 import { IoMdSearch } from "react-icons/io";
 import { MdCancel } from "react-icons/md";
 import { HeroSectionProps } from "../components/HeroSection";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Cryptocurrencies = () => {
   const { data, error, isLoading } = useGetCryptocurrenciesQuery({});
@@ -91,7 +92,17 @@ const Cryptocurrencies = () => {
               </div>
             )}
           </div>
-          <CoinGrid coins={filteredCoins} gridSize="4" />
+          <AnimatePresence>
+            <motion.div
+              key={"Cryptocurrencies"}
+              initial={{ y: -1000, opacity: 0 }}
+              animate={{ y: 0, opacity: 1, scrollBehavior: "smooth" }}
+              exit={{ opacity: 0 }}
+              className=""
+            >
+              <CoinGrid coins={filteredCoins} gridSize="4" />
+            </motion.div>
+          </AnimatePresence>
         </div>
       )}
     </div>

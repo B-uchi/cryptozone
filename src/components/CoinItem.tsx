@@ -8,7 +8,6 @@ type CoinItemProps = {
 
 const CoinItem = (props: CoinItemProps) => {
   const coin = props.coin;
-  console.log(coin)
   return (
     <Link to={`/coins/${coin.uuid}`}>
     <div

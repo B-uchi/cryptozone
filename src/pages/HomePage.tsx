@@ -2,6 +2,7 @@ import CryptoStats from "../components/CryptoStats";
 import HeroSection from "../components/HeroSection";
 import TopCoins from "../components/TopCoins";
 import { useGetCryptocurrenciesQuery } from "../util/cryptocurrencyAPI";
+import { AnimatePresence, motion } from "framer-motion";
 
 const HomePage = () => {
   const { data, error, isLoading } = useGetCryptocurrenciesQuery({});
@@ -23,11 +24,19 @@ const HomePage = () => {
           A network error occured....
         </p>
       ) : (
-        <div className="w-full p-2">
-          <HeroSection coin={firstCoin} />
-          <CryptoStats stats={stats} />
-          <TopCoins coins={first10Coins} />
-        </div>
+        <AnimatePresence>
+          <motion.div
+            key={'HomePage'}
+            initial={{ x: -1000, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="w-full p-2"
+          >
+            <HeroSection coin={firstCoin} />
+            <CryptoStats stats={stats} />
+            <TopCoins coins={first10Coins} />
+          </motion.div>
+        </AnimatePresence>
       )}
     </div>
   );
