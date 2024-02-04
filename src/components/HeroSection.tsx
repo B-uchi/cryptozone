@@ -2,6 +2,7 @@ import millify from "millify";
 
 export type HeroSectionProps = {
   coin: {
+    id: number;
     name: string;
     price: number;
     iconUrl: string;

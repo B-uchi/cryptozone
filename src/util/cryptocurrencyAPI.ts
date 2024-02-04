@@ -17,7 +17,7 @@ export const cryptocurrencyApi = createApi({
       query: () => createRequest("/coins"),
     }),
     getCryptocurrencyDetails: builder.query({
-      query: (coinId) => createRequest(`/coin/${coinId}`),
+      query: (coinUuid) => createRequest(`/coin/${coinUuid}`),
     }),
   }),
 });
