@@ -17,8 +17,8 @@ const Navbar = () => {
           <Link to={"/"}>
             <MenuItem text="Home" />
           </Link>
-          <Link to={"/exchanges"}>
-            <MenuItem text="Exchanges" />
+          <Link to={"/coins"}>
+            <MenuItem text="Coins" />
           </Link>
           <Link to={"/news"}>
             <MenuItem text="News" />
@@ -48,8 +48,8 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link to={"/exchanges"}>
-                  <MenuItem text="Exchanges" />
+                <Link to={"/coins"}>
+                  <MenuItem text="Coins" />
                 </Link>
               </li>
               <li>
