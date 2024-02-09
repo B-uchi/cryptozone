@@ -55,13 +55,13 @@ const LineChart: React.FC<any> = ({
   return (
     <div className="mt-3">
       <div className="flex justify-between text-black">
-        <h1 className="font-bold text-2xl">{coinName} Price Chart</h1>
+        <h1 className="font-bold md:text-2xl">{coinName} Price Chart</h1>
         <div className="flex gap-5">
-          <p className="font-bold">Change: {priceHistoryData?.change}</p>
-          <p className="font-bold">Current Price: {millify(currentPrice)}</p>
+          <p className="font-bold text-sm md:text-md">Change: {priceHistoryData?.change}</p>
+          <p className="font-bold text-sm md:text-md">Current Price: {millify(currentPrice)}</p>
         </div>
       </div>
-      <Line data={data} options={options} />
+      <Line data={data} options={options}  />
     </div>
   );
 };

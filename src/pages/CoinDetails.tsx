@@ -108,8 +108,8 @@ const CoinDetails = () => {
             className="w-full"
           >
             <div className="text-black dark:text-white flex flex-col items-center p-5 w-full">
-              <div className="flex w-[90%] justify-between mb-5">
-                <div className="mt-2 border-[1px] dark:bg-black bg-white rounded-xl border-[#efefef] dark:border-[#171717] justify-center text-center flex flex-col items-center w-[45%] shadow-sm">
+              <div className="flex w-full md:w-[90%] flex-col md:flex-row justify-between mb-5 gap-5 md:gap-0">
+                <div className="mt-2 border-[1px] dark:bg-black bg-white rounded-xl border-[#efefef] dark:border-[#171717] justify-center text-center flex flex-col items-center w-full md:w-[45%] shadow-sm p-5">
                   <img className="w-32" src={coinData.iconUrl} alt="" />
 
                   <h1 className="font-bold mt-3 text-3xl flex items-center gap-2">
@@ -119,13 +119,13 @@ const CoinDetails = () => {
                     {HTMLReactParser(coinData.description)}
                   </p>
                 </div>
-                <div className="mt-2 border-[1px] dark:bg-black bg-white rounded-xl border-[#efefef] dark:border-[#171717] flex w-[45%] p-3 justify-center items-center shadow-sm">
+                <div className="mt-2 border-[1px] dark:bg-black bg-white rounded-xl border-[#efefef] dark:border-[#171717] flex w-full md:w-[45%] p-3 justify-center items-center shadow-sm">
                   <div className="">
                     <h1 className="font-bold text-2xl text-center">
                       {coinData.name} Stats
                     </h1>
 
-                    <div className="w-[500px]">
+                    <div className="md:w-[500px]">
                       {coinStat.map((stat, index) => (
                         <div
                           key={index}
@@ -142,7 +142,7 @@ const CoinDetails = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-[90%] relative border-[2px] border-[#efefef] dark:border-[#171717] bg-white dark:bg-slate-300 h-[100vh] shadow-md p-2 mt-3 rounded-lg">
+              <div className="w-full md:w-[90%] relative border-[2px] border-[#efefef] dark:border-[#171717] bg-white dark:bg-[#efefef] shadow-md p-2 mt-3 rounded-lg">
                 {priceLoading ? (
                   <div className="newtons-cradle absolute left-[50%] top-[50vh]">
                     <div className="newtons-cradle__dot"></div>

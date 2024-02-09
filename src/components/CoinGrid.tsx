@@ -13,7 +13,7 @@ const CoinGrid = (props: TopCoinsProps) => {
   const coins = props.coins;
   const news = props.news;
   const styles =
-    `flex flex-wrap justify-between gap-5 w-[100%] mt-2`;
+    `flex md:flex-row flex-col flex-wrap justify-between gap-5 mt-2`;
   return (
     <div className={styles}>
       {coins && coins.length > 0
