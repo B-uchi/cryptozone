@@ -47,14 +47,19 @@ const LineChart: React.FC<any> = ({
       y: {
         type: "linear",
         beginAtZero: true,
+        grid:{
+          color: "#e1e1e1"
+        }
       },
-      x: { reverse: true },
+      x: { reverse: true, grid:{
+        color: "#e1e1e1"
+      } },
     },
   };
 
   return (
-    <div className="mt-3">
-      <div className="flex justify-between text-black">
+    <div className="mt-3 ">
+      <div className="flex justify-between dark:text-white">
         <h1 className="font-bold md:text-2xl">{coinName} Price Chart</h1>
         <div className="flex gap-5">
           <p className="font-bold text-sm md:text-md">Change: {priceHistoryData?.change}</p>

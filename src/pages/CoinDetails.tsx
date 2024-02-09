@@ -142,7 +142,7 @@ const CoinDetails = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-full md:w-[90%] relative border-[2px] border-[#efefef] dark:border-[#171717] bg-white dark:bg-[#efefef] shadow-md p-2 mt-3 rounded-lg">
+              <div className="w-full md:w-[90%] relative border-[2px] border-[#efefef] dark:border-[#171717] bg-white dark:bg-[#000000] shadow-md p-2 mt-3 rounded-lg">
                 {priceLoading ? (
                   <div className="newtons-cradle absolute left-[50%] top-[50vh]">
                     <div className="newtons-cradle__dot"></div>
@@ -152,11 +152,11 @@ const CoinDetails = () => {
                   </div>
                 ) : (
                   <div className="">
-                    <div className="flex gap-2 text-black items-center">
+                    <div className="flex gap-2 text-black dark:text-white items-center">
                       Select a time period:
                       <select
                         value={timePeriod}
-                        className="border-black border-[2px] rounded-lg w-20"
+                        className="border-black text-black border-[2px] rounded-lg w-20"
                         title="chart time period"
                         id=""
                         onChange={(event) => setTimePeriod(event.target.value)}
