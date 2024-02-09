@@ -17,7 +17,9 @@ const Navbar = () => {
           <Link to={"/"}>
             <MenuItem text="Home" />
           </Link>
-          <MenuItem text="Exchanges" />
+          <Link to={"/exchanges"}>
+            <MenuItem text="Exchanges" />
+          </Link>
           <Link to={"/news"}>
             <MenuItem text="News" />
           </Link>
@@ -46,7 +48,9 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <MenuItem text="Exchanges" />
+                <Link to={"/exchanges"}>
+                  <MenuItem text="Exchanges" />
+                </Link>
               </li>
               <li>
                 <Link to={"/news"}>
