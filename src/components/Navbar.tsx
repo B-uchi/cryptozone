@@ -7,65 +7,78 @@ import { MdClose } from "react-icons/md";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  
   return (
-    <nav className="bg-white sticky z-50 top-0 w-full dark:bg-[#0a0a0a] flex p-1 dark:text-white border-b-[1px] border-[#efefef] dark:border-[#171717]">
-      <div className="container mx-auto p-3 flex justify-between items-center">
-        <Link to={"/"}>
-          <h1 className="text-2xl font-bold ">CryptOzone</h1>
-        </Link>
-        <div className="text-black hidden md:flex dark:text-white  items-center gap-6">
-          <Link to={"/"}>
-            <MenuItem text="Home" />
+    <nav className="sticky top-0 z-50 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+      <div className="container mx-auto px-4 py-3">
+        <div className="flex items-center justify-between">
+          <Link to="/" className="flex items-center space-x-2">
+            <h1 className="text-2xl font-bold text-black dark:text-white">
+              CryptOzone
+            </h1>
           </Link>
-          <Link to={"/coins"}>
-            <MenuItem text="Coins" />
-          </Link>
-          <Link to={"/news"}>
-            <MenuItem text="News" />
-          </Link>
-          <div className="flex items-center cursor-pointer hover:bg-[#c0c0c0] dark:hover:bg-[#242424] p-1.5 rounded-lg">
-            <ThemeSwitch />
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center space-x-8">
+            <Link to="/" className="nav-link">
+              <MenuItem text="Home" />
+            </Link>
+            <Link to="/coins" className="nav-link">
+              <MenuItem text="Coins" />
+            </Link>
+            <Link to="/news" className="nav-link">
+              <MenuItem text="News" />
+            </Link>
+            <div className="p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+              <ThemeSwitch />
+            </div>
           </div>
-        </div>
-        <div className="text-black md:hidden dark:text-white gap-6">
+
+          {/* Mobile Menu Button */}
           <button
             type="button"
-            title="nav_menu"
-            className="cursor-pointer"
-            onClick={() => setMenuOpen((prev: boolean) => !prev)}
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100 text-black dark:text-white dark:hover:bg-gray-800 transition-colors"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
           >
-            {menuOpen ? <MdClose size={25} /> : <FiMenu size={25} />}
+            {menuOpen ? <MdClose size={24} /> : <FiMenu size={24} />}
           </button>
         </div>
       </div>
-      {menuOpen ? (
-        <div className="absolute top-[110%] md:hidden left-0 bg-white border-[1px] border-[#efefef] dark:border-[#171717] dark:bg-[#0a0a0a] w-full p-7">
-          <div className="container">
-            <ul className="flex flex-col gap-5 items-center">
-              <li>
-                <Link to={"/"}>
-                  <MenuItem text="Home" />
-                </Link>
-              </li>
-              <li>
-                <Link to={"/coins"}>
-                  <MenuItem text="Coins" />
-                </Link>
-              </li>
-              <li>
-                <Link to={"/news"}>
-                  <MenuItem text="News" />
-                </Link>
-              </li>
-              <li>
-                <div className="flex items-center cursor-pointer hover:bg-[#c0c0c0] dark:hover:bg-[#242424] p-1.5 rounded-lg">
-                  <ThemeSwitch />
-                </div>
-              </li>
-            </ul>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="absolute top-full left-0 w-full md:hidden bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+          <div className="container mx-auto px-4 py-4">
+            <div className="flex flex-col space-y-4">
+              <Link 
+                to="/" 
+                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                onClick={() => setMenuOpen(false)}
+              >
+                <MenuItem text="Home" />
+              </Link>
+              <Link 
+                to="/coins"
+                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                onClick={() => setMenuOpen(false)}
+              >
+                <MenuItem text="Coins" />
+              </Link>
+              <Link 
+                to="/news"
+                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                onClick={() => setMenuOpen(false)}
+              >
+                <MenuItem text="News" />
+              </Link>
+              <div className="p-2">
+                <ThemeSwitch />
+              </div>
+            </div>
           </div>
         </div>
-      ) : null}
+      )}
     </nav>
   );
 };

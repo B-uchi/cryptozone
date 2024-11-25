@@ -28,155 +28,161 @@ const CoinDetails = () => {
     });
   const priceHistoryData = priceHistory?.data;
   const coinData = data?.data?.coin;
+
   type CoinStat = {
     title: string;
     value: string | number;
     icon: JSX.Element;
   };
+
   const coinStat: CoinStat[] = [
     {
       title: "Rank",
       value: coinData?.rank,
-      icon: <FaHashtag size={35} />,
+      icon: <FaHashtag size={24} />,
     },
     {
       title: "Price",
       value: `$${millify(Number(coinData?.price))}`,
-      icon: <BsCoin size={35} />,
+      icon: <BsCoin size={24} />,
     },
     {
       title: "Change",
       value: `${millify(Number(coinData?.change))}`,
-      icon: <CgArrowsExchangeV size={35} />,
+      icon: <CgArrowsExchangeV size={24} />,
     },
     {
       title: "Exchanges",
       value: millify(Number(coinData?.numberOfExchanges)),
-      icon: <BsCashCoin size={35} />,
+      icon: <BsCashCoin size={24} />,
     },
     {
       title: "Total Markets",
       value: millify(Number(coinData?.numberOfMarkets)),
-      icon: <IoTrendingUp size={35} />,
+      icon: <IoTrendingUp size={24} />,
     },
     {
-      title: "All Time High (daily avg.)",
+      title: "All Time High",
       value: `$${millify(Number(coinData?.allTimeHigh.price))}`,
-      icon: <GoTrophy size={35} />,
+      icon: <GoTrophy size={24} />,
     },
     {
-      title: "24h Trading Volume",
+      title: "24h Volume",
       value: `$${millify(Number(coinData?.["24hVolume"]))}`,
-      icon: <BsFillLightningFill size={35} />,
+      icon: <BsFillLightningFill size={24} />,
     },
     {
       title: "Market Cap",
       value: `$${millify(Number(coinData?.marketCap))}`,
-      icon: <FaHashtag size={35} />,
-    },
-    {
-      title: "Total Supply",
-      value: millify(Number(coinData?.supply.total)),
-      icon: <FaHashtag size={35} />,
-    },
-    {
-      title: "Circulating Supply",
-      value: millify(Number(coinData?.supply.circulating)),
-      icon: <FaHashtag size={35} />,
-    },
+      icon: <FaHashtag size={24} />,
+    }
   ];
+
   return (
-    <div className="md:max-h-fit mt-0 flex relative w-full">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {isLoading ? (
-        <div className="newtons-cradle absolute left-[50%] top-[50vh]">
-          <div className="newtons-cradle__dot"></div>
-          <div className="newtons-cradle__dot"></div>
-          <div className="newtons-cradle__dot"></div>
-          <div className="newtons-cradle__dot"></div>
+        <div className="flex justify-center items-center h-screen">
+          <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-blue-500"></div>
         </div>
       ) : error ? (
-        <p className="text-black dark:text-white text-sm md:text-xl absolute left-[50%] translate-x-[-50%] top-[50vh]">
-          A network error occured....
-        </p>
+        <div className="flex justify-center items-center h-screen">
+          <p className="text-red-500 text-xl">Network error occurred...</p>
+        </div>
       ) : (
         <AnimatePresence>
           <motion.div
             key={uuid}
-            initial={{ x: 1000, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="w-full"
+            className="container mx-auto px-4 py-8"
           >
-            <div className="text-black dark:text-white flex flex-col items-center p-5 w-full">
-              <div className="flex w-full md:w-[90%] flex-col md:flex-row justify-between mb-5 gap-5 md:gap-0">
-                <div className="mt-2 border-[1px] dark:bg-black bg-white rounded-xl border-[#efefef] dark:border-[#171717] justify-center text-center flex flex-col items-center w-full md:w-[45%] shadow-sm p-5">
-                  <img className="w-32" src={coinData.iconUrl} alt="" />
-
-                  <h1 className="font-bold mt-3 text-3xl flex items-center gap-2">
-                    {coinData.name} ({coinData.symbol}){" "}
+            <div className="flex flex-col space-y-8">
+              {/* Header Section */}
+              <div className="flex items-center space-x-6 bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+                <img 
+                  src={coinData.iconUrl} 
+                  alt={coinData.name} 
+                  className="w-20 h-20 object-contain"
+                />
+                <div>
+                  <h1 className="text-3xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                    {coinData.name} 
+                    <span className="text-lg text-gray-500 dark:text-gray-400">
+                      {coinData.symbol}
+                    </span>
                   </h1>
-                  <p className="text-sm md:text-lg dark:text-[rgb(221,210,210)]">
+                  <p className="text-gray-600 dark:text-gray-300 mt-2 line-clamp-2">
                     {HTMLReactParser(coinData.description)}
                   </p>
                 </div>
-                <div className="mt-2 border-[1px] dark:bg-black bg-white rounded-xl border-[#efefef] dark:border-[#171717] flex w-full md:w-[45%] p-3 justify-center items-center shadow-sm">
-                  <div className="">
-                    <h1 className="font-bold text-2xl text-center">
-                      {coinData.name} Stats
-                    </h1>
+              </div>
 
-                    <div className="md:w-[500px]">
-                      {coinStat.map((stat, index) => (
-                        <div
-                          key={index}
-                          className="flex items-center justify-between p-2 border-b-[1px] dark:text-[rgb(221,210,210)] border-[#e1e1e1] dark:border-[#202020]"
-                        >
-                          <span className="flex items-center gap-2">
-                            {stat.icon}
-                            {stat.title}:
-                          </span>{" "}
-                          <span>{stat.value}</span>
+              {/* Stats Grid - Redesigned */}
+              <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                  Market Statistics
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                  {coinStat.map((stat, index) => (
+                    <div
+                      key={index}
+                      className="relative group"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="relative bg-gray-50 dark:bg-gray-700 p-6 rounded-xl transform transition-transform duration-300 group-hover:-translate-y-1">
+                        <div className="flex flex-col space-y-3">
+                          <div className="flex items-center space-x-3">
+                            <div className="p-3 bg-blue-100 dark:bg-gray-600 rounded-lg text-blue-600 dark:text-blue-300">
+                              {stat.icon}
+                            </div>
+                            <span className="font-medium text-gray-500 dark:text-gray-300">
+                              {stat.title}
+                            </span>
+                          </div>
+                          <div className="pl-2">
+                            <span className="text-xl font-bold text-gray-900 dark:text-white">
+                              {stat.value}
+                            </span>
+                          </div>
                         </div>
-                      ))}
+                      </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
               </div>
-              <div className="w-full md:w-[90%] relative border-[2px] border-[#efefef] dark:border-[#171717] bg-white dark:bg-[#000000] shadow-md p-2 mt-3 rounded-lg">
+
+              {/* Chart Section */}
+              <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+                <div className="flex items-center space-x-4 mb-6">
+                  <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+                    Price History
+                  </h2>
+                  <select
+                    value={timePeriod}
+                    onChange={(e) => setTimePeriod(e.target.value)}
+                    className="bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg px-3 py-2 focus:ring-blue-500 focus:border-blue-500"
+                  >
+                    {time.map((t) => (
+                      <option key={t} value={t}>
+                        {t}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
                 {priceLoading ? (
-                  <div className="newtons-cradle absolute left-[50%] top-[50vh]">
-                    <div className="newtons-cradle__dot"></div>
-                    <div className="newtons-cradle__dot"></div>
-                    <div className="newtons-cradle__dot"></div>
-                    <div className="newtons-cradle__dot"></div>
+                  <div className="flex justify-center items-center h-64">
+                    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
                   </div>
                 ) : (
-                  <div className="">
-                    <div className="flex gap-2 text-black dark:text-white items-center">
-                      Select a time period:
-                      <select
-                        value={timePeriod}
-                        className="border-black text-black border-[2px] rounded-lg w-20"
-                        title="chart time period"
-                        id=""
-                        onChange={(event) => setTimePeriod(event.target.value)}
-                      >
-                        {time.map((date, index) => (
-                          <option key={index} value={date}>
-                            {date}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-
-                    {priceHistoryData && (
-                      <LineChart
-                        priceHistoryData={priceHistoryData}
-                        currentPrice={coinData.price}
-                        coinName={coinData.name}
-                      />
-                    )}
-                  </div>
+                  priceHistoryData && (
+                    <LineChart
+                      priceHistoryData={priceHistoryData}
+                      currentPrice={coinData.price}
+                      coinName={coinData.name}
+                    />
+                  )
                 )}
               </div>
             </div>

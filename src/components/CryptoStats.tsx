@@ -1,4 +1,7 @@
 import millify from "millify";
+import { BsCurrencyBitcoin, BsBuilding, BsCashCoin } from "react-icons/bs";
+import { AiOutlineLineChart, AiOutlineTransaction } from "react-icons/ai";
+import { MdShowChart } from "react-icons/md";
 
 type CryptoStatsProps = {
   stats: {
@@ -7,56 +10,81 @@ type CryptoStatsProps = {
     totalMarketCap: number;
     total24hVolume: number;
     totalMarkets: number;
+    total: number;
   };
 };
 
 const CryptoStats = (props: CryptoStatsProps) => {
-  const {
-    totalCoins,
-    totalExchanges,
-    totalMarketCap,
-    total24hVolume,
-    totalMarkets,
-  } = props.stats;
-  const params = [
-    totalCoins,
-    totalExchanges,
-    totalMarketCap,
-    total24hVolume,
-    totalMarkets,
+  const stats = [
+    {
+      title: "Total Cryptocurrencies",
+      value: props.stats.totalCoins,
+      icon: <BsCurrencyBitcoin className="w-8 h-8 text-blue-500" />,
+      color: "bg-blue-50 dark:bg-blue-900/20"
+    },
+    {
+      title: "Total Exchanges",
+      value: props.stats.totalExchanges,
+      icon: <BsBuilding className="w-8 h-8 text-purple-500" />,
+      color: "bg-purple-50 dark:bg-purple-900/20"
+    },
+    {
+      title: "Total Market Cap",
+      value: props.stats.totalMarketCap,
+      prefix: "$",
+      icon: <AiOutlineLineChart className="w-8 h-8 text-green-500" />,
+      color: "bg-green-50 dark:bg-green-900/20"
+    },
+    {
+      title: "24h Trading Volume",
+      value: props.stats.total24hVolume,
+      prefix: "$",
+      icon: <AiOutlineTransaction className="w-8 h-8 text-orange-500" />,
+      color: "bg-orange-50 dark:bg-orange-900/20"
+    },
+    {
+      title: "Total Markets",
+      value: props.stats.totalMarkets,
+      icon: <MdShowChart className="w-8 h-8 text-red-500" />,
+      color: "bg-red-50 dark:bg-red-900/20"
+    },
+    {
+      title: "Total",
+      value: props.stats.total,
+      icon: <BsCashCoin className="w-8 h-8 text-yellow-500" />,
+      color: "bg-yellow-50 dark:bg-yellow-900/20"
+    }
   ];
+
   return (
-    <div className="text-black mt-10 md:mt-3 flex-col dark:text-white flex w-full justify-center items-center mb-10">
-      <h1 className="text-3xl mb-3 font-bold">Crypto Stats</h1>
-      <div className="flex flex-col md:flex-row gap-3  w-[90%]">
-        {params.slice(0, 3).map((param, index) => (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">
+        Global Crypto Statistics
+      </h2>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {stats.map((stat, index) => (
           <div
             key={index}
-            className="flex flex-col-reverse md:w-1/3 h-[150px] justify-center items-center gap-2 p-2 bg-white dark:bg-black rounded-md border-[1px] border-[#efefef] dark:border-[#171717] cursor-pointer"
+            className={`${stat.color} cursor-pointer rounded-2xl p-6 transition-all duration-300 hover:scale-105 hover:shadow-lg dark:shadow-gray-800/30`}
           >
-            <p className="font-bold text-2xl">{millify(param)}</p>
-            <p className="text-sm">
-              {index === 0
-                ? "Coins"
-                : index === 1
-                ? "Exchanges"
-                : index === 2
-                ? "Market Cap"
-                : index === 3
-                ? "24h Volume"
-                : "Markets"}
-            </p>
-          </div>
-        ))}
-      </div>
-      <div className="flex flex-col md:flex-row gap-3 w-[90%] mt-3">
-        {params.slice(3, 5).map((param, index) => (
-          <div
-            key={index}
-            className="flex flex-col-reverse md:w-1/2 justify-center h-[150px]  items-center gap-2 p-2 bg-white dark:bg-black rounded-md border-[1px] border-[#efefef] dark:border-[#171717] cursor-pointer"
-          >
-            <p className="font-bold text-2xl">{millify(param)}</p>
-            <p className="text-sm">{index === 0 ? "24h Volume" : "Markets"}</p>
+            <div className="flex items-center justify-between">
+              <div className="p-3 rounded-xl bg-white dark:bg-gray-800 shadow-sm">
+                {stat.icon}
+              </div>
+              <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                Last 24h
+              </span>
+            </div>
+            
+            <div className="mt-4">
+              <h3 className="text-lg font-medium text-gray-600 dark:text-gray-300">
+                {stat.title}
+              </h3>
+              <p className="mt-2 text-2xl font-bold text-gray-900 dark:text-white">
+                {stat.prefix}{millify(stat.value)}
+              </p>
+            </div>
           </div>
         ))}
       </div>
