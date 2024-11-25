@@ -32,7 +32,7 @@ function ThemeSwitch() {
       )}
     >
       <span className="sr-only">
-        {enabled ? <MdDarkMode size={20}/> : <MdLightMode size={20}/>}
+        {enabled ? <MdDarkMode size={20} color="black"/> : <MdLightMode size={20} color="white"/>}
       </span>
     </Switch>
   );
