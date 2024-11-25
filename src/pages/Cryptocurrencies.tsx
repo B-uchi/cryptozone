@@ -9,98 +9,91 @@ import { AnimatePresence, motion } from "framer-motion";
 const Cryptocurrencies = () => {
   const { data, error, isLoading } = useGetCryptocurrenciesQuery({});
   const [searchParam, setSearchParam] = useState("");
-  const [showSearch, setShowSearch] = useState(false);
-  const [filteredCoins, setFilteredCoins] = useState([]);
-
-  type CoinType = {
-    coin: HeroSectionProps["coin"];
-  };
+  const [filteredCoins, setFilteredCoins] = useState<HeroSectionProps["coin"][]>([]);
 
   useEffect(() => {
-    if (!isLoading) {
-      setFilteredCoins(data?.data?.coins);
+    if (data?.data?.coins) {
+      setFilteredCoins(data.data.coins);
     }
-  }, [isLoading]);
+  }, [data]);
 
-  const searchCoins = (search: string) => {
-    const filtered = data?.data?.coins.filter((coin: CoinType["coin"]) => {
-      return coin.name.toLowerCase().includes(search.toLowerCase());
-    });
-    setFilteredCoins(filtered);
+  useEffect(() => {
+    if (data?.data?.coins) {
+      const filtered = data.data.coins.filter((coin: HeroSectionProps["coin"]) => 
+        coin.name.toLowerCase().includes(searchParam.toLowerCase()) ||
+        coin.symbol.toLowerCase().includes(searchParam.toLowerCase())
+      );
+      setFilteredCoins(filtered);
+    }
+  }, [searchParam, data]);
+
+  const clearSearch = () => {
+    setSearchParam("");
   };
 
   return (
-    <div className="md:max-h-fit flex justify-center relative w-full text-black dark:text-white">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8">
       {isLoading ? (
-        <div className="newtons-cradle absolute top-[50vh]">
-          <div className="newtons-cradle__dot"></div>
-          <div className="newtons-cradle__dot"></div>
-          <div className="newtons-cradle__dot"></div>
-          <div className="newtons-cradle__dot"></div>
+        <div className="flex justify-center items-center h-[60vh]">
+          <div className="newtons-cradle">
+            <div className="newtons-cradle__dot"></div>
+            <div className="newtons-cradle__dot"></div>
+            <div className="newtons-cradle__dot"></div>
+            <div className="newtons-cradle__dot"></div>
+          </div>
         </div>
       ) : error ? (
-        <p className="text-black dark:text-white  absolute left-[50%] translate-x-[-50%] top-[50vh] text-sm md:text-xl">
-          A network error occured....
-        </p>
+        <div className="flex justify-center items-center h-[60vh]">
+          <p className="text-gray-900 dark:text-white text-xl">
+            A network error occurred...
+          </p>
+        </div>
       ) : (
-        <div className="w-[90%] p-2 mt-3">
-          <div
-            className="flex justify-evenly items-baseline w-full
-          "
-          >
-            <h1 className="text-xl mr-2 md:text-2xl mb-5 font-bold">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
               Cryptocurrencies
             </h1>
-            {!showSearch ? (
-              <div className="p-2">
-                <button
-                  type="button"
-                  title="search_btn"
-                  onClick={() => setShowSearch(true)}
-                >
-                  <IoMdSearch size={28} />
-                </button>
-              </div>
-            ) : (
-              <div className="border-[1px] text-black dark:text-white search-box border-black dark:border-[#9e9e9e] p-2 rounded-full text-[12px] flex items-center gap-3">
-                <button
-                  type="button"
-                  title="search-btn"
-                  onClick={() => searchCoins(searchParam)}
-                >
-                  <IoMdSearch size={25} />
-                </button>
+            
+            <div className="relative w-full sm:w-auto">
+              <div className="flex items-center bg-white dark:bg-gray-800 rounded-lg px-4 py-2 shadow-sm border border-gray-200 dark:border-gray-700">
+                <IoMdSearch className="text-gray-400 w-5 h-5" />
                 <input
                   type="text"
-                  className="w-[90%] bg-transparent outline-none"
-                  placeholder="Type to search..."
-                  onChange={(e) => setSearchParam(e.target.value)}
+                  className="ml-2 flex-1 bg-transparent outline-none text-gray-900 dark:text-white placeholder-gray-400"
+                  placeholder="Search cryptocurrencies..."
                   value={searchParam}
+                  onChange={(e) => setSearchParam(e.target.value)}
                 />
-                {searchParam.length > 0 && (
+                {searchParam && (
                   <button
-                    type="button"
-                    title="cancel-btn"
-                    onClick={() => {
-                      setFilteredCoins(data?.data?.coins);
-                      setSearchParam("");
-                    }}
+                    onClick={clearSearch}
+                    className="ml-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
                   >
-                    <MdCancel size={20} />
+                    <MdCancel className="w-5 h-5" />
                   </button>
                 )}
               </div>
-            )}
+            </div>
           </div>
+
           <AnimatePresence>
             <motion.div
-              key={"Cryptocurrencies"}
-              initial={{ y: -1000, opacity: 0 }}
-              animate={{ y: 0, opacity: 1, scrollBehavior: "smooth" }}
+              key="crypto-grid"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
-              className=""
+              transition={{ duration: 0.3 }}
             >
-              <CoinGrid coins={filteredCoins} gridSize="4" />
+              {filteredCoins.length > 0 ? (
+                <CoinGrid coins={filteredCoins} gridSize="4" />
+              ) : (
+                <div className="text-center py-12">
+                  <p className="text-gray-600 dark:text-gray-400">
+                    No cryptocurrencies found matching your search.
+                  </p>
+                </div>
+              )}
             </motion.div>
           </AnimatePresence>
         </div>
