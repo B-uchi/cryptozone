@@ -2,14 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <title>
-      CryptoZone: Your Trusted Source for Cryptocurrency News & Insights
-    </title>
+    <meta name="description" content="CryptoZone: live cryptocurrency prices, market data and news, printed like money." />
+    <meta name="theme-color" content="#eef2ec" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a1d17" media="(prefers-color-scheme: dark)" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      // Apply the saved theme before first paint to avoid a flash.
+      (function () {
+        try {
+          var t = JSON.parse(localStorage.getItem("cz:theme") || '"system"');
+          var dark = t === "dark" || (t === "system" && matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("dark", dark);
+        } catch (e) {}
+      })();
+    </script>
+    <title>CryptoZone · Live crypto market</title>
   </head>
   <body>
+    <!--
+      THESIS: Market data printed like currency. The market is a sheet of security-printed notes and the coin page is a note face. Refuses the neon-on-black glass crypto dashboard.
+      OWN-WORLD: Cool cotton-rag paper (#eef2ec) and deep intaglio green fields (#0e4a38) with fine-line guilloche rosettes and wave bands drawn live from price data, microprint rules, copper serial numerals (#b8401e), and oxblood for losses. Archivo set wide and heavy for denominations, normal width for UI.
+      STORY: The visitor reads the whole market as one note, scans a ledger of coins, stars favourites, and opens any coin into its own engraved note with a hatched price chart.
+      FIRST VIEWPORT: A full-width green market note with its total cap as the denomination, a coin-seeded rosette at right, and a BTC guilloche band along the bottom. The market ledger starts directly below, and ⌘K search sits in the header.
+      FORM: Intaglio Note, grounded list #5; seed 395d38c8.
+      FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+    -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

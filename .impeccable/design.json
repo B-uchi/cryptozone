@@ -1,0 +1,652 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-29T15:22:27.241026+00:00",
+  "title": "Design System: CryptoZone",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Cotton Paper",
+        "canonical": "rgb(var(--paper))",
+        "tonalRamp": [
+          "#0a0c08",
+          "#232622",
+          "#40433e",
+          "#5f625d",
+          "#80847e",
+          "#a3a6a1",
+          "#c7cac5",
+          "#ecf0ea"
+        ]
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Panel White",
+        "canonical": "rgb(var(--panel))",
+        "tonalRamp": [
+          "#0a0c09",
+          "#242623",
+          "#41433f",
+          "#60625e",
+          "#81837f",
+          "#a4a6a2",
+          "#c8cac6",
+          "#edefeb"
+        ]
+      },
+      "sunk": {
+        "role": "neutral",
+        "displayName": "Sunk Paper",
+        "canonical": "rgb(var(--sunk))",
+        "tonalRamp": [
+          "#080d08",
+          "#222721",
+          "#3e443d",
+          "#5d635c",
+          "#7e847d",
+          "#a1a7a0",
+          "#c5cbc4",
+          "#eaf1e9"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Engraver's Ink",
+        "canonical": "rgb(var(--ink))",
+        "tonalRamp": [
+          "#001009",
+          "#122b22",
+          "#2f483f",
+          "#4e685e",
+          "#6e897f",
+          "#90ada2",
+          "#b4d1c6",
+          "#d9f7eb"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "canonical": "rgb(var(--muted))",
+        "tonalRamp": [
+          "#001008",
+          "#132a22",
+          "#30483f",
+          "#4e685e",
+          "#6f897e",
+          "#91aca1",
+          "#b5d1c5",
+          "#daf6ea"
+        ]
+      },
+      "faint": {
+        "role": "neutral",
+        "displayName": "Faint Ink",
+        "canonical": "rgb(var(--faint))",
+        "tonalRamp": [
+          "#010f08",
+          "#162a22",
+          "#33473e",
+          "#52675d",
+          "#72887e",
+          "#94aba1",
+          "#b8d0c5",
+          "#ddf5ea"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgb(var(--rule))",
+        "tonalRamp": [
+          "#040e07",
+          "#1d2820",
+          "#39463d",
+          "#58655c",
+          "#79867c",
+          "#9ba99f",
+          "#bfcec3",
+          "#e4f3e8"
+        ]
+      },
+      "note": {
+        "role": "primary",
+        "displayName": "Intaglio Green",
+        "canonical": "rgb(var(--note))",
+        "tonalRamp": [
+          "#001306",
+          "#002f1f",
+          "#134d3b",
+          "#376e5a",
+          "#58907b",
+          "#7bb39d",
+          "#9ed8c1",
+          "#c3fee6"
+        ]
+      },
+      "note-ink": {
+        "role": "primary",
+        "displayName": "Note Ink",
+        "canonical": "rgb(var(--note-ink))",
+        "tonalRamp": [
+          "#060d08",
+          "#1f2822",
+          "#3b453e",
+          "#5a645d",
+          "#7b857e",
+          "#9da8a1",
+          "#c1cdc5",
+          "#e6f2ea"
+        ]
+      },
+      "note-dim": {
+        "role": "primary",
+        "displayName": "Note Dim",
+        "canonical": "rgb(var(--note-dim))",
+        "tonalRamp": [
+          "#001205",
+          "#022d1d",
+          "#244b39",
+          "#436b58",
+          "#648d79",
+          "#86b09b",
+          "#aad5bf",
+          "#cefbe4"
+        ]
+      },
+      "mint": {
+        "role": "neutral",
+        "displayName": "Mint Tint",
+        "canonical": "rgb(var(--mint))",
+        "tonalRamp": [
+          "#010f07",
+          "#172a20",
+          "#34473c",
+          "#53675b",
+          "#73887c",
+          "#95ab9e",
+          "#b9d0c2",
+          "#def5e7"
+        ]
+      },
+      "serial": {
+        "role": "secondary",
+        "displayName": "Copper Serial",
+        "canonical": "rgb(var(--serial))",
+        "tonalRamp": [
+          "#2d0000",
+          "#500000",
+          "#742209",
+          "#99442d",
+          "#bf664e",
+          "#e5896f",
+          "#ffad92",
+          "#ffd2b6"
+        ]
+      },
+      "up": {
+        "role": "tertiary",
+        "displayName": "Ledger Green",
+        "canonical": "rgb(var(--up))",
+        "tonalRamp": [
+          "#001600",
+          "#003310",
+          "#00532c",
+          "#07744b",
+          "#3b966b",
+          "#61ba8d",
+          "#86dfb0",
+          "#abffd5"
+        ]
+      },
+      "down": {
+        "role": "tertiary",
+        "displayName": "Oxblood",
+        "canonical": "rgb(var(--down))",
+        "tonalRamp": [
+          "#2d0000",
+          "#500011",
+          "#741d2d",
+          "#99404b",
+          "#bf616b",
+          "#e6848d",
+          "#ffa8b1",
+          "#ffcdd5"
+        ]
+      },
+      "paper-dark": {
+        "role": "neutral",
+        "displayName": "Cotton Paper (dark)",
+        "canonical": "rgb(var(--paper))",
+        "tonalRamp": [
+          "#010f09",
+          "#162a23",
+          "#334740",
+          "#52675f",
+          "#728880",
+          "#94aba3",
+          "#b8cfc7",
+          "#ddf5ec"
+        ]
+      },
+      "panel-dark": {
+        "role": "neutral",
+        "displayName": "Panel White (dark)",
+        "canonical": "rgb(var(--panel))",
+        "tonalRamp": [
+          "#001009",
+          "#122a22",
+          "#2f483f",
+          "#4e685e",
+          "#6f897f",
+          "#91aca1",
+          "#b4d1c5",
+          "#d9f6eb"
+        ]
+      },
+      "sunk-dark": {
+        "role": "neutral",
+        "displayName": "Sunk Paper (dark)",
+        "canonical": "rgb(var(--sunk))",
+        "tonalRamp": [
+          "#020e0a",
+          "#192923",
+          "#364640",
+          "#54665f",
+          "#758780",
+          "#97aaa3",
+          "#bbcec7",
+          "#e0f4ec"
+        ]
+      },
+      "ink-dark": {
+        "role": "neutral",
+        "displayName": "Engraver's Ink (dark)",
+        "canonical": "rgb(var(--ink))",
+        "tonalRamp": [
+          "#060d08",
+          "#1f2822",
+          "#3b453e",
+          "#5a645d",
+          "#7b857e",
+          "#9da8a1",
+          "#c1cdc5",
+          "#e6f2ea"
+        ]
+      },
+      "muted-dark": {
+        "role": "neutral",
+        "displayName": "Muted Ink (dark)",
+        "canonical": "rgb(var(--muted))",
+        "tonalRamp": [
+          "#000f07",
+          "#142a21",
+          "#31483d",
+          "#50685c",
+          "#70897d",
+          "#92ac9f",
+          "#b6d1c3",
+          "#dbf6e8"
+        ]
+      },
+      "faint-dark": {
+        "role": "neutral",
+        "displayName": "Faint Ink (dark)",
+        "canonical": "rgb(var(--faint))",
+        "tonalRamp": [
+          "#001007",
+          "#102b20",
+          "#2d493d",
+          "#4c695c",
+          "#6c8a7c",
+          "#8fad9f",
+          "#b2d2c3",
+          "#d7f8e8"
+        ]
+      },
+      "rule-dark": {
+        "role": "neutral",
+        "displayName": "Hairline (dark)",
+        "canonical": "rgb(var(--rule))",
+        "tonalRamp": [
+          "#001008",
+          "#0d2b21",
+          "#2b493e",
+          "#4a695d",
+          "#6b8b7e",
+          "#8daea0",
+          "#b0d2c4",
+          "#d5f8e9"
+        ]
+      },
+      "note-dark": {
+        "role": "primary",
+        "displayName": "Intaglio Green (dark)",
+        "canonical": "rgb(var(--note))",
+        "tonalRamp": [
+          "#001404",
+          "#00301c",
+          "#004f39",
+          "#2c6f57",
+          "#509278",
+          "#73b59a",
+          "#96dabe",
+          "#bbffe3"
+        ]
+      },
+      "note-ink-dark": {
+        "role": "primary",
+        "displayName": "Note Ink (dark)",
+        "canonical": "rgb(var(--note-ink))",
+        "tonalRamp": [
+          "#060d09",
+          "#1f2722",
+          "#3c443f",
+          "#5b645e",
+          "#7b857f",
+          "#9ea8a1",
+          "#c2ccc5",
+          "#e7f2eb"
+        ]
+      },
+      "note-dim-dark": {
+        "role": "primary",
+        "displayName": "Note Dim (dark)",
+        "canonical": "rgb(var(--note-dim))",
+        "tonalRamp": [
+          "#001204",
+          "#002e1c",
+          "#1b4d38",
+          "#3d6d57",
+          "#5e8f78",
+          "#80b29a",
+          "#a4d7be",
+          "#c8fde3"
+        ]
+      },
+      "mint-dark": {
+        "role": "neutral",
+        "displayName": "Mint Tint (dark)",
+        "canonical": "rgb(var(--mint))",
+        "tonalRamp": [
+          "#001106",
+          "#022d1f",
+          "#234b3c",
+          "#436b5b",
+          "#648d7b",
+          "#86b09e",
+          "#a9d5c2",
+          "#cefae7"
+        ]
+      },
+      "serial-dark": {
+        "role": "secondary",
+        "displayName": "Copper Serial (dark)",
+        "canonical": "rgb(var(--serial))",
+        "tonalRamp": [
+          "#2d0000",
+          "#500000",
+          "#732300",
+          "#984526",
+          "#be6748",
+          "#e48a6a",
+          "#ffae8d",
+          "#ffd3b1"
+        ]
+      },
+      "up-dark": {
+        "role": "tertiary",
+        "displayName": "Ledger Green (dark)",
+        "canonical": "rgb(var(--up))",
+        "tonalRamp": [
+          "#001600",
+          "#00340d",
+          "#00542a",
+          "#007549",
+          "#2e9869",
+          "#57bc8b",
+          "#7de1ae",
+          "#a3ffd3"
+        ]
+      },
+      "down-dark": {
+        "role": "tertiary",
+        "displayName": "Oxblood (dark)",
+        "canonical": "rgb(var(--down))",
+        "tonalRamp": [
+          "#2c0002",
+          "#4f0017",
+          "#731d33",
+          "#983f51",
+          "#be6171",
+          "#e58493",
+          "#ffa8b7",
+          "#ffcddb"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Denomination",
+        "purpose": "Money and page titles: market cap, coin price, index page titles, wordmark, 404."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section heads, coin name on the note, lead story title."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Panel heads: Movers, Convert, Supply, Market data."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Table cells, descriptions, news dek; tabular figures for all numbers."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Table column headers and command-palette group headers only."
+      },
+      "serial": {
+        "displayName": "Serial",
+        "purpose": "Ranks, tickers, serial numbers, issue dates, period segments, kbd, tags."
+      }
+    },
+    "shadows": [
+      {
+        "name": "note",
+        "value": "0 1px 1px rgb(var(--shadow) / 0.12), 0 12px 32px -12px rgb(var(--shadow) / 0.35)",
+        "purpose": "Note faces and the command palette dialog."
+      },
+      {
+        "name": "lift",
+        "value": "0 1px 2px rgb(var(--shadow) / 0.10), 0 8px 24px -10px rgb(var(--shadow) / 0.30)",
+        "purpose": "Solid buttons, skip link, coin medallion on a note."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Entrances (rise) and live price flashes."
+      },
+      {
+        "name": "rise",
+        "value": "220ms ease-out-expo, translateY(6px) scale(0.985) to none",
+        "purpose": "New denomination values, mobile menu, command palette open."
+      },
+      {
+        "name": "flash",
+        "value": "1.4s ease-out-expo, up/down at 22% to transparent",
+        "purpose": "Price cell when a live poll changes the value."
+      },
+      {
+        "name": "shimmer",
+        "value": "1.6s linear infinite",
+        "purpose": "Skeleton loading."
+      },
+      {
+        "name": "state",
+        "value": "150ms",
+        "purpose": "Hover and selection colour transitions."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "all durations 0.001ms",
+        "purpose": "Global prefers-reduced-motion override."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "container",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Solid Button",
+      "kind": "button",
+      "refersTo": "button-solid",
+      "description": "The single primary action on a screen, printed in intaglio green.",
+      "html": "<button class=\"ds-btn ds-btn-solid\">Browse the market</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 14px;border-radius:8px;font-family:Archivo,ui-sans-serif,system-ui,sans-serif;font-size:14px;font-weight:600;border:1px solid transparent;cursor:pointer;transition:background-color .15s,color .15s,border-color .15s,transform .15s}.ds-btn:active{transform:scale(.98)}.ds-btn:focus-visible{outline:2px solid rgb(var(--serial));outline-offset:2px}.ds-btn-solid{background:rgb(var(--note));color:rgb(var(--note-ink));box-shadow:0 1px 2px rgb(var(--shadow)/.10),0 8px 24px -10px rgb(var(--shadow)/.30)}.ds-btn-solid:hover{background:rgb(var(--note)/.9)}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Retry, pagination and load-more actions on paper.",
+      "html": "<button class=\"ds-btn ds-btn-outline\">Try again</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 14px;border-radius:8px;font-family:Archivo,ui-sans-serif,system-ui,sans-serif;font-size:14px;font-weight:600;border:1px solid transparent;cursor:pointer;transition:background-color .15s,color .15s,border-color .15s,transform .15s}.ds-btn:active{transform:scale(.98)}.ds-btn:focus-visible{outline:2px solid rgb(var(--serial));outline-offset:2px}.ds-btn-outline{background:rgb(var(--panel));color:rgb(var(--ink));border-color:rgb(var(--rule))}.ds-btn-outline:hover{background:rgb(var(--sunk));border-color:rgb(var(--faint))}"
+    },
+    {
+      "name": "Quiet Button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Section links like 'Full market' and icon toggles.",
+      "html": "<button class=\"ds-btn ds-btn-quiet\">Full market <svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"currentColor\"><path fill-rule=\"evenodd\" d=\"M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z\"/></svg></button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:36px;padding:0 14px;border-radius:8px;font-family:Archivo,ui-sans-serif,system-ui,sans-serif;font-size:14px;font-weight:600;border:1px solid transparent;cursor:pointer;transition:background-color .15s,color .15s,border-color .15s,transform .15s}.ds-btn:active{transform:scale(.98)}.ds-btn:focus-visible{outline:2px solid rgb(var(--serial));outline-offset:2px}.ds-btn-quiet{background:transparent;color:rgb(var(--muted))}.ds-btn-quiet:hover{background:rgb(var(--sunk));color:rgb(var(--ink))}"
+    },
+    {
+      "name": "Period Segmented Control",
+      "kind": "chip",
+      "refersTo": "segment-active",
+      "description": "Chart and market period picker; active segment is the note green.",
+      "html": "<div class=\"ds-seg\" role=\"radiogroup\"><button class=\"ds-seg-b\">24H</button><button class=\"ds-seg-b ds-on\" aria-checked=\"true\">7D</button><button class=\"ds-seg-b\">30D</button><button class=\"ds-seg-b\">1Y</button></div>",
+      "css": ".ds-seg{display:inline-flex;padding:2px;border:1px solid rgb(var(--rule));border-radius:8px;background:rgb(var(--panel))}.ds-seg-b{height:32px;min-width:44px;padding:0 10px;border:0;border-radius:6px;background:transparent;color:rgb(var(--muted));font-family:Archivo,sans-serif;font-variation-settings:'wdth' 85;font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background-color .15s,color .15s}.ds-seg-b:hover{background:rgb(var(--sunk));color:rgb(var(--ink))}.ds-seg-b.ds-on{background:rgb(var(--note));color:rgb(var(--note-ink))}.ds-seg-b:focus-visible{outline:2px solid rgb(var(--serial));outline-offset:2px}"
+    },
+    {
+      "name": "Coin Chip",
+      "kind": "chip",
+      "refersTo": "chip-coin",
+      "description": "Pill link to a coin with its icon.",
+      "html": "<a class=\"ds-chip\" href=\"#\"><span class=\"ds-chip-i\">HY</span>Hyperliquid</a>",
+      "css": ".ds-chip{display:inline-flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;border:1px solid rgb(var(--rule));border-radius:9999px;background:rgb(var(--panel));color:rgb(var(--ink));font-family:Archivo,sans-serif;font-size:14px;font-weight:600;text-decoration:none;transition:background-color .15s,border-color .15s}.ds-chip:hover{background:rgb(var(--sunk));border-color:rgb(var(--faint))}.ds-chip:focus-visible{outline:2px solid rgb(var(--serial));outline-offset:2px}.ds-chip-i{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:rgb(var(--mint));font-size:9px;font-weight:700}"
+    },
+    {
+      "name": "Converter Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Numeric input well with the unit set in serial type.",
+      "html": "<label class=\"ds-field\"><input class=\"ds-input\" value=\"1\" inputmode=\"decimal\"><span class=\"ds-unit\">ETH</span></label>",
+      "css": ".ds-field{position:relative;display:block;width:280px}.ds-input{width:100%;height:44px;padding:0 64px 0 12px;border:1px solid rgb(var(--rule));border-radius:8px;background:rgb(var(--paper));color:rgb(var(--ink));font-family:Archivo,sans-serif;font-size:16px;font-weight:600;font-variant-numeric:tabular-nums;outline:none;transition:border-color .15s}.ds-input:focus{border-color:rgb(var(--faint))}.ds-input:focus-visible{outline:2px solid rgb(var(--serial));outline-offset:2px}.ds-unit{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:rgb(var(--muted));font-size:12px;font-weight:600;letter-spacing:.08em;font-variation-settings:'wdth' 85}"
+    },
+    {
+      "name": "Main Navigation",
+      "kind": "nav",
+      "refersTo": "search-trigger",
+      "description": "Header links with copper underline on the active page, plus the search trigger.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-a ds-on\" href=\"#\">Overview</a><a class=\"ds-nav-a\" href=\"#\">Market</a><a class=\"ds-nav-a\" href=\"#\">Watchlist</a><a class=\"ds-nav-a\" href=\"#\">News</a><button class=\"ds-search\">Search coins…<kbd class=\"ds-kbd\">⌘K</kbd></button></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:4px;height:60px;padding:0 16px;border-bottom:1px solid rgb(var(--rule));background:rgb(var(--paper));font-family:Archivo,sans-serif}.ds-nav-a{position:relative;padding:8px 12px;font-size:14px;font-weight:600;color:rgb(var(--muted));text-decoration:none;transition:color .15s}.ds-nav-a:hover{color:rgb(var(--ink))}.ds-nav-a.ds-on{color:rgb(var(--ink))}.ds-nav-a.ds-on::after{content:'';position:absolute;left:12px;right:12px;bottom:-13px;height:2px;background:rgb(var(--serial))}.ds-nav-a:focus-visible{outline:2px solid rgb(var(--serial));outline-offset:2px}.ds-search{margin-left:auto;display:flex;align-items:center;gap:8px;width:256px;height:36px;padding:0 8px 0 12px;border:1px solid rgb(var(--rule));border-radius:8px;background:rgb(var(--panel));color:rgb(var(--faint));font:inherit;font-size:14px;cursor:pointer}.ds-search:hover{border-color:rgb(var(--faint));color:rgb(var(--muted))}.ds-kbd{margin-left:auto;padding:2px 6px;border:1px solid rgb(var(--rule));border-radius:4px;background:rgb(var(--sunk));font-size:10px;font-weight:600;letter-spacing:.08em;color:rgb(var(--muted))}"
+    },
+    {
+      "name": "Change Indicator",
+      "kind": "custom",
+      "description": "Price change with sign, arrow and direction colour.",
+      "html": "<span class=\"ds-chg ds-up\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path fill-rule=\"evenodd\" d=\"M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z\"/></svg>0.98%</span> <span class=\"ds-chg ds-down\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 20 20\" fill=\"currentColor\"><path fill-rule=\"evenodd\" d=\"M6.28 5.22a.75.75 0 0 0-1.06 1.06l7.22 7.22H6.75a.75.75 0 0 0 0 1.5h7.5a.75.75 0 0 0 .75-.75v-7.5a.75.75 0 0 0-1.5 0v5.69L6.28 5.22Z\"/></svg>0.03%</span>",
+      "css": ".ds-chg{display:inline-flex;align-items:center;gap:2px;font-family:Archivo,sans-serif;font-size:14px;font-weight:600;font-variant-numeric:tabular-nums}.ds-up{color:rgb(var(--up))}.ds-down{color:rgb(var(--down))}"
+    },
+    {
+      "name": "Note Face",
+      "kind": "card",
+      "refersTo": "note-face",
+      "description": "The intaglio-green hero note with engraved frame, serial and denomination.",
+      "html": "<section class=\"ds-note\"><div class=\"ds-note-f1\"></div><div class=\"ds-note-f2\"></div><div class=\"ds-note-top\"><span>Rank 2 · ETH</span><span class=\"ds-note-ser\">CZ 002 0519</span></div><p class=\"ds-note-den\">$2,358</p><div class=\"ds-note-mp\">ETHEREUM · ETH · RANK 2 · CRYPTOZONE · ETHEREUM · ETH · RANK 2 · CRYPTOZONE · ETHEREUM · ETH · RANK 2 · CRYPTOZONE</div></section>",
+      "css": ".ds-note{position:relative;overflow:hidden;width:520px;padding:28px 40px 0;border-radius:14px;background:rgb(var(--note));color:rgb(var(--note-ink));font-family:Archivo,sans-serif;box-shadow:0 1px 1px rgb(var(--shadow)/.12),0 12px 32px -12px rgb(var(--shadow)/.35)}.ds-note-f1{position:absolute;inset:8px;border:1px solid rgb(var(--note-ink)/.15);border-radius:10px;pointer-events:none}.ds-note-f2{position:absolute;inset:13px;border:1px solid rgb(var(--note-ink)/.10);border-radius:7px;pointer-events:none}.ds-note-top{display:flex;justify-content:space-between;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-variation-settings:'wdth' 85;color:rgb(var(--note-dim))}.ds-note-ser{color:rgb(var(--note-serial))}.ds-note-den{margin:32px 0;font-size:72px;line-height:.9;font-weight:800;letter-spacing:-.03em;font-stretch:125%;font-variation-settings:'wdth' 125;font-variant-numeric:tabular-nums lining-nums}.ds-note-mp{margin:0 -40px;padding:10px 40px;border-top:1px solid rgb(var(--note-ink)/.15);font-size:5.5px;letter-spacing:.18em;font-weight:600;white-space:nowrap;overflow:hidden;color:rgb(var(--note-dim)/.7)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Intaglio Note",
+    "overview": "**Creative North Star: \"The Intaglio Note\"**\n\nThe market is a sheet of security-printed currency. Every hero surface is a banknote face: a deep intaglio-green field with a double engraved frame, a guilloche rosette seeded by the coin it represents, a wave band whose lines literally trace the price series, a copper serial number, and a microprint rule along the bottom edge. Everything around the notes is the paper they are printed on: cool cotton-rag neutrals, hairline rules, and a quiet ledger of tabular numbers.\n\nDensity is a trading ledger, not a dashboard of cards. The market table, movers list, and supply data are plain rows on paper separated by hairlines; panels exist only to group a tool (chart, converter, supply). Ornament is generated from live data and never drawn as decoration for its own sake: the rosette is seeded from a coin's id, the band from Bitcoin's 24h sparkline, the serial from a hash of the coin. Numbers are the hero, set in wide, heavy Archivo like a note's denomination.\n\nThe world explicitly refuses the neon-on-black glass crypto dashboard: no glows, no gradients-as-brand, no glassy cards. Dark mode is the same note printed on night paper, not a different aesthetic.",
+    "keyCharacteristics": [
+      "Two materials only: paper (neutral surfaces, ledger rows) and note (green intaglio field for heroes and the one active choice in a control).",
+      "Guilloche, microprint and serials are procedurally generated from real data.",
+      "One variable family, Archivo, used at three widths: 125 for denominations, 100 for UI, 85 for serials.",
+      "Gain/loss always carries sign and arrow alongside green/oxblood.",
+      "Flat paper; only notes, dialogs and solid buttons lift."
+    ],
+    "rules": [
+      {
+        "name": "The Direction-Only Rule",
+        "body": "Up and down colours mean price direction and nothing else, and they never appear without a sign and an arrow.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Note Rule",
+        "body": "Intaglio Green fills at most one hero surface per screen plus the single selected item of a control. Panels, cards and rows are paper.",
+        "section": "colors"
+      },
+      {
+        "name": "The Copper Thread Rule",
+        "body": "Copper marks identity and attention (serials, active indicator, focus ring, starred state) as a thin line or glyph, never as a background.",
+        "section": "colors"
+      },
+      {
+        "name": "The Three Widths Rule",
+        "body": "Width encodes role: 125 is money, 100 is language, 85 is a code. Do not set prose wide or prices condensed.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Rule",
+        "body": "Every number on screen uses tabular lining figures so columns and live updates never jitter.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Paper Rule",
+        "body": "Panels, rows, chips and inputs carry a hairline border and no shadow. If it is printed on the paper, it does not float.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** render every hero as a note: Intaglio Green field, double inner frame, data-seeded rosette, copper serial, microprint edge.",
+      "**Do** derive ornament from data: seed rosettes with the coin id, trace guilloche bands from a real price series, hash serials from the coin.",
+      "**Do** pair every gain/loss colour with a sign and an up/down-right arrow, and give it screen-reader text.",
+      "**Do** set money in denomination type (Archivo wdth 125, 800) and every number in tabular figures.",
+      "**Do** keep panels flat on paper with 1px hairlines and 14px corners; reserve the Note and Lift shadows for notes, dialogs and solid buttons.",
+      "**Do** use the copper ring (2px, offset 2px) for all keyboard focus.",
+      "**Do** collapse table columns progressively on small screens instead of turning rows into cards.",
+      "**Do** honour reduced motion: the global override flattens all animation and transition durations."
+    ],
+    "donts": [
+      "**Don't** build neon-on-black glass dashboards: no glows, glassy translucent cards, or gradient brand fills.",
+      "**Don't** use up/down green or oxblood for buttons, brand, links or decoration.",
+      "**Don't** fill more than one hero surface per screen with Intaglio Green.",
+      "**Don't** put information in microprint; it is aria-hidden texture at 5.5px.",
+      "**Don't** introduce a second typeface or a monospace; use Archivo's width axis and tabular figures.",
+      "**Don't** use copper as a background fill or for body text.",
+      "**Don't** add drop shadows to panels, rows, chips or inputs."
+    ]
+  }
+}

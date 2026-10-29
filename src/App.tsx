@@ -1,25 +1,25 @@
-import Navbar from "./components/Navbar";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import Cryptocurrencies from "./pages/Cryptocurrencies";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Shell from "./components/Shell";
+import Overview from "./pages/Overview";
+import Market from "./pages/Market";
+import Watchlist from "./pages/Watchlist";
+import CoinDetail from "./pages/CoinDetail";
 import News from "./pages/News";
-import CoinDetails from "./pages/CoinDetails";
+import NotFound from "./pages/NotFound";
 
-function App() {
+export default function App() {
   return (
-    <Router>
-      <div className=" h-fit w-full">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/coins" element={<Cryptocurrencies />} />
-          <Route path="/news" element={<News />} />
-          <Route path="*" element={<h1>404 Not Found</h1>} />
-          <Route path="/coins/:uuid" element={<CoinDetails />} />
-        </Routes>
-      </div>
-    </Router>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Shell />}>
+          <Route index element={<Overview />} />
+          <Route path="coins" element={<Market />} />
+          <Route path="coins/:uuid" element={<CoinDetail />} />
+          <Route path="watchlist" element={<Watchlist />} />
+          <Route path="news" element={<News />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
